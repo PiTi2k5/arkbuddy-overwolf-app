@@ -5,15 +5,15 @@ function renderForcefieldApp() {
   <div class="basic-card clear no-padding">
   <div class="input-box half">
   <label for="elementFF">Element Amount</label>
-  <input placeholder="0" id="elementFF" type="number" onKeyUp="forcefieldData()">
+  <input placeholder="0" id="elementFF" type="number" onKeyUp="forcefieldData()" onChange="forcefieldData()">
   </div>
   <div class="input-box half right-side">
   <label for="elementShardFF">Shard Amount</label>
-  <input placeholder="0" id="elementShardFF" type="number" onKeyUp="forcefieldData()">
+  <input placeholder="0" id="elementShardFF" type="number" onKeyUp="forcefieldData()" onChange="forcefieldData()">
   </div>
   <div class="input-box">
   <label for="radiusFF">Radius</label>
-  <input placeholder="0" id="radiusFF" type="number" onKeyUp="forcefieldData()">
+  <input placeholder="0" id="radiusFF" type="number" onKeyUp="forcefieldData()" onChange="forcefieldData()">
   </div>
   </div>
   
