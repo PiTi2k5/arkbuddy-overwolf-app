@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../css/general.css" />
+    <link rel="stylesheet" href="../../css/header.css" />
+    <link rel="stylesheet" href="../../css/modal.css" />
+    <title>Arkbuddy - in-game</title>
+    <link href="https://www.tristan.games/p/fa/css/all.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="in-game">
+    <div id="ark-box" class="arkbuddy-app">
+
+    <!-- -------------------------------- Header ------------------------------- -->
+
+    <header class="app-header">
+      <h1>Arkbuddy</h1>
+      <div class="window-controls-group">
+        <button disabled class="hotkeyPanel window-control">
+          <span id="hotkey" class="inline">CTRL + B</span>
+        </button>
+        <a class="icon window-control" href="overwolf://settings/hotkeys">
+          <svg>
+            <use xlink:href="/img/header_icons.svg#window-control_settings" />
+          </svg>
+        </a>
+        <button class="icon window-control" id="minimizeButton">
+          <svg>
+            <use xlink:href="../../img/header_icons.svg#window-control_minimize" />
+          </svg>
+        </button>
+        <button class="icon window-control window-control-close" id="closeButton">
+          <svg>
+            <use xlink:href="../../img/header_icons.svg#window-control_close" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- --------------------------------- Main -------------------------------- -->
+
+      <!--- side nav bar start --->
+  <div class="side-nav-bar">
+    <div class="logo-box" onclick="renderHomePage()">
+      <img src="https://res.cloudinary.com/tristangregory/image/upload/v1590385418/ArkbuddyIcon.png">
+      </div>
+    <div class="nav-btn" onclick="renderHomePage()">
+      <i class="far fa-home"></i>
+      Home
+      </div>
+    <div class="bottom">
+    <div class="nav-btn" onclick="renderFeedbackPage()">
+      <i class="far fa-comment-smile"></i>
+      Feedback
+      </div>
+    <div class="nav-btn" onclick="renderSettingsPage()">
+      <i class="far fa-cog"></i>
+      Settings
+      </div>
+      </div>
+    </div>
+    <!--- side nav bar end --->
+  <div class="calc-details">
+  <div class="basic-card clear">
+    <p id="appName"></p>
+    <span id="appSubTitle"></span>
+    </div>
+  </div>
+  <div class="extra-space"></div>
+    <!---  app start --->
+  <div id="app"></div>
+    <!---  app end --->
+    <!---  ad start --->
+  <div class="ad-space">
+    <div class="basic-card clear">
+      <a href="https://discord.gg/nv8wpcW">
+      <div class="nav-btn third-tile inline" onclick="renderSettingsPage()">
+        <i class="fab fa-discord"></i>
+        Discord
+        </div> 
+        </a>
+
+        <a href="https://twitter.com/Tristan_Greg">
+        <div class="nav-btn third-tile inline" onclick="renderSettingsPage()">
+          <i class="fab fa-twitter-square"></i>
+          Twitter
+          </div>
+          </a>
+
+          <a href="https://arkbuddy.app">
+          <div class="nav-btn third-tile inline" onclick="renderSettingsPage()">
+            <i class="far fa-browser"></i>
+            Website
+            </div>
+            </a>
+
+    </div>
+    <div id="ad-div"></div>
+  </div>
+
+    <!-- -------------------------------- Modal -------------------------------- -->
+    <div id="exitMinimizeModal" class="modal">
+      <div class="modal-content">
+        <h3>Exit the app?</h3>
+        <p>
+          Exiting the app will close all the app windows and terminate the app
+          process.<br />
+          <br />
+          Are you sure?
+        </p>
+        <span class="buttonBar">
+          <button id="minimize" class="modalButton">
+            Minimize
+          </button>
+          <button id="exit" class="modalButton">
+            Exit
+          </button>
+        </span>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  <script src="js/rForge.js"></script>
+  <script src="js/tekGen.js"></script>
+  <script src="js/forcefield.js"></script>
+  <script src="js/iForge.js"></script>
+  <script src="js/eGen.js"></script>
+  <script src="js/campfire.js"></script>
+  <script src="js/customRecipe.js"></script>
+  <script src="js/tameRoulette.js"></script>
+
+    
+    <script src="../../lib/require.js"></script>
+    <script>
+      require(["in-game-controller"], function(InGameController) {
+        console.log(`[INIT] in-game module loaded`);
+        const inGameController = new InGameController();
+        inGameController.run();
+      }, function(error) {
+        console.log(`[INIT] failed to load in-game module ${error}`);
+      });
+    </script>
+    <script
+    src="http://content.overwolf.com/libs/ads/latest/owads.min.js"
+    async
+    onload="onOwAdReady()"
+  ></script>
+  <script>
+    function onOwAdReady() {
+      const owAd = new OwAd(document.getElementById("ad-div"));
+      function onWindowStateChanged(state) {
+   
+          // when state changes to minimized, call removeAd()
+          if (state.window_state === "minimized") {
+            owAd.removeAd();
+            console.log("Ads removed")
+          }
+          // when state changes from minimized to normal, call refreshAd()
+          else if (
+            state.window_previous_state === "minimized" &&
+            state.window_state === "normal"
+          ) {
+            owAd.refreshAd();
+            console.log("Ads refreshed")
+          }
+      
+      }
+
+      overwolf.windows.onStateChanged.removeListener(onWindowStateChanged);
+      overwolf.windows.onStateChanged.addListener(onWindowStateChanged);
+    }
+  </script>
+
+
+
+  </body>
+</html>
