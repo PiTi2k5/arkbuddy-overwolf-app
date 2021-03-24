@@ -170,3 +170,14 @@ function submitForm() {
 
 
 
+
+newHotkey = {
+  name: 'Show/Hide Tame App',
+  virtualKey: 75,
+  modifiers: {
+    ctrl: true //shift
+  }
+};
+function setHK() {
+  overwolf.settings.hotkeys.assign(newHotkey, console.log)
+}

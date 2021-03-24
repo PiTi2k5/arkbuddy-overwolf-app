@@ -61,7 +61,7 @@ function renderCustomRecipeApp() {
 </div>
 
 <div class="input-box quarter-tile right-side no-padding">
-<input type="number" onKeyUp="craftCustomConsumable()" id="item1QtyInput" value="0">
+<input type="number" onKeyUp="craftCustomConsumable()" onChange="craftCustomConsumable()" id="item1QtyInput" value="0">
 </div>
 
 <div class="input-box three-quarter no-padding">
@@ -95,7 +95,7 @@ function renderCustomRecipeApp() {
 </div>
 
 <div class="input-box quarter-tile right-side no-padding">
-<input type="number" onKeyUp="craftCustomConsumable()" id="item2QtyInput" value="0">
+<input type="number" onKeyUp="craftCustomConsumable()" onChange="craftCustomConsumable()" id="item2QtyInput" value="0">
 </div>
 
 <div class="input-box three-quarter no-padding">
@@ -129,7 +129,7 @@ function renderCustomRecipeApp() {
 </div>
 
 <div class="input-box quarter-tile right-side no-padding">
-<input type="number" onKeyUp="craftCustomConsumable()" id="item3QtyInput" value="0">
+<input type="number" onKeyUp="craftCustomConsumable()" onChange="craftCustomConsumable()" id="item3QtyInput" value="0">
 </div>
 
 <div class="input-box three-quarter no-padding">
@@ -163,7 +163,7 @@ function renderCustomRecipeApp() {
 </div>
 
 <div class="input-box quarter-tile right-side no-padding">
-<input type="number" onKeyUp="craftCustomConsumable()" id="item4QtyInput" value="0">
+<input type="number" onKeyUp="craftCustomConsumable()" onChange="craftCustomConsumable()" id="item4QtyInput" value="0">
 </div>
 
 <div class="input-box three-quarter no-padding">
@@ -197,7 +197,7 @@ function renderCustomRecipeApp() {
 </div>
 
 <div class="input-box quarter-tile right-side no-padding">
-<input type="number" onKeyUp="craftCustomConsumable()" id="item5QtyInput" value="0">
+<input type="number" onKeyUp="craftCustomConsumable()" onChange="craftCustomConsumable()" id="item5QtyInput" value="0">
 </div>
 
 <div class="input-box three-quarter no-padding">
@@ -231,7 +231,7 @@ function renderCustomRecipeApp() {
 </div>
 
 <div class="input-box quarter-tile right-side no-padding">
-<input type="number" onKeyUp="craftCustomConsumable()" id="item6QtyInput" value="0">
+<input type="number" onKeyUp="craftCustomConsumable()" onChange="craftCustomConsumable()" id="item6QtyInput" value="0">
 </div>
 
 <div class="input-box three-quarter no-padding">
@@ -265,7 +265,7 @@ function renderCustomRecipeApp() {
 </div>
 
 <div class="input-box quarter-tile right-side no-padding">
-<input type="number" onKeyUp="craftCustomConsumable()" id="item7QtyInput" value="0">
+<input type="number" onKeyUp="craftCustomConsumable()" onChange="craftCustomConsumable()" id="item7QtyInput" value="0">
 </div>
 
 <div class="input-box three-quarter no-padding">
@@ -299,7 +299,7 @@ function renderCustomRecipeApp() {
 </div>
 
 <div class="input-box quarter-tile right-side no-padding">
-<input type="number" onKeyUp="craftCustomConsumable()" id="item8QtyInput" value="0">
+<input type="number" onKeyUp="craftCustomConsumable()" onChange="craftCustomConsumable()" id="item8QtyInput" value="0">
 </div>
 
   

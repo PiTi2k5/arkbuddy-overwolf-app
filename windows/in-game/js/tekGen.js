@@ -5,15 +5,15 @@ function renderTekGenApp() {
   <div class="basic-card clear no-padding">
   <div class="input-box half">
   <label for="elementTG">Element Amount</label>
-  <input placeholder="0" id="elementTG" type="number" onKeyUp="tekGenData()">
+  <input placeholder="0" id="elementTG" type="number" onKeyUp="tekGenData()" onChange="tekGenData()">
   </div>
   <div class="input-box half right-side">
   <label for="elementShardTG">Shard Amount</label>
-  <input placeholder="0" id="elementShardTG" type="number" onKeyUp="tekGenData()">
+  <input placeholder="0" id="elementShardTG" type="number" onKeyUp="tekGenData()" onChange="tekGenData()">
   </div>
   <div class="input-box">
   <label for="radiusTG">Radius</label>
-  <input placeholder="0" id="radiusTG" type="number" onKeyUp="tekGenData()">
+  <input placeholder="0" id="radiusTG" type="number" onKeyUp="tekGenData()" onChange="tekGenData()">
   </div>
   </div>
   

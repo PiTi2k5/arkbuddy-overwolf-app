@@ -5,11 +5,11 @@ function renderForgeApp() {
   <div class="basic-card clear no-padding">
   <div class="input-box half">
   <label for="metalAmountRF">Metal Amount</label>
-  <input placeholder="0" id="metalAmountRF" type="number" onKeyUp="forgeData()" onfocusout="oddCheck()">
+  <input placeholder="0" id="metalAmountRF" type="number" onKeyUp="forgeData()" onChange="forgeData()" onfocusout="oddCheck()">
   </div>
   <div class="input-box half">
   <label for="forgeAmountRF">Forge Amount</label>
-  <input placeholder="0" id="forgeAmountRF" type="number" onKeyUp="forgeData()">
+  <input placeholder="0" id="forgeAmountRF" type="number" onKeyUp="forgeData()" onChange="forgeData()">
   </div>
   </div>
   

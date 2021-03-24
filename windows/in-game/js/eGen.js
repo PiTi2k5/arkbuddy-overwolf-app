@@ -5,7 +5,7 @@ function renderEGenApp() {
   <div class="basic-card clear no-padding">
   <div class="input-box">
   <label for="gasAmount">Gas Amount</label>
-  <input placeholder="0" id="gasAmount" type="number" onKeyUp="eGenData()">
+  <input placeholder="0" id="gasAmount" type="number" onKeyUp="eGenData()" onChange="eGenData()">
   </div>
   </div>
   
@@ -35,7 +35,7 @@ function eGenData() {
   var minutes = parseInt((secondsTotal % 3600) / 60);
   var seconds = parseInt(secondsTotal % 60);
   fuelConsumtion.innerText = fuelConsumptionRate;
-  time.innerText = `${numFill(hours)}:${numFill(minutes)}:${numFill(seconds)}`;
+  time.innerText = `${numFill(days)}:${numFill(hours)}:${numFill(minutes)}:${numFill(seconds)}`;
   fuelTable.style.opacity = "1";
   
 }

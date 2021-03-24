@@ -5,12 +5,12 @@ function renderCampfireApp() {
   <div class="basic-card clear no-padding">
   <div class="input-box half">
   <label for="meatAmountCF">Meat Amount</label>
-  <input placeholder="0" id="meatAmountCF" type="number" onKeyUp="campfireData()">
+  <input placeholder="0" id="meatAmountCF" type="number" onKeyUp="campfireData()" onChange="campfireData()">
   </div>
   
   <div class="input-box half right-side">
   <label for="meatAmountCF">Campfire Amount</label>
-  <input placeholder="0" id="campfireAmountCF" type="number" onKeyUp="campfireData()">
+  <input placeholder="0" id="campfireAmountCF" type="number" onKeyUp="campfireData()" onChange="campfireData()">
   </div>
 
   </div>

@@ -5,7 +5,7 @@ function renderiForgeApp() {
   <div class="basic-card clear no-padding">
   <div class="input-box">
   <label for="metalAmountIF">Metal Amount</label>
-  <input placeholder="0" id="metalAmountIF" type="number" onKeyUp="iforgeData()">
+  <input placeholder="0" id="metalAmountIF" type="number" onKeyUp="iforgeData()" onChange="iforgeData()">
   </div>
 
   </div>
