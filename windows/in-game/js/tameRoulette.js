@@ -2,7 +2,7 @@ function renderTameRouletteApp() {
   appName.innerText = 'Tame Roulette';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card clear no-padding">
+  <div class="basic-card ">
   <div class="img-cont-tr">
 <img id="creatureImg">
 </div>

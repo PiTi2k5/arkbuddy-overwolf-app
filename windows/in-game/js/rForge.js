@@ -2,7 +2,7 @@ function renderForgeApp() {
   appName.innerText = 'Refining Forge Calculator';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card clear no-padding">
+  <div class="basic-card">
   <div class="input-box half">
   <label for="metalAmountRF">Metal Amount</label>
   <input placeholder="0" id="metalAmountRF" type="number" onKeyUp="forgeData()" onChange="forgeData()" onfocusout="oddCheck()">
@@ -13,13 +13,13 @@ function renderForgeApp() {
   </div>
   </div>
   
-  <div id="fuelTable" class="basic-card clear no-padding fuel-card">
+  <div id="fuelTable" class="basic-card fuel-card">
   <div class="half-tile">
   <h3><span class="block large-text odometer" id="perForge"></span>
   <span class="light">Metal Per Forge</span></h3>
   </div>
 <div class="half-tile">
-  <h3><span class="block large-text odometer" id="time"></span>
+  <h3><span class="block large-text " id="time"></span>
   <span class="light">Time Until Complete</span></h3>
   </div>
   

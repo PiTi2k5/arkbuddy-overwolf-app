@@ -73,52 +73,36 @@
     <!---  app end --->
     <!---  ad start --->
   <div class="ad-space">
-    <div class="basic-card clear">
+    <div class="basic-card">
+      <span class="side-bar-title">Follow Arkbuddy!</span>
       <a href="https://discord.gg/nv8wpcW">
-      <div class="nav-btn third-tile inline" onclick="renderSettingsPage()">
+      <div class="side-bar-tile third-tile inline" onclick="renderSettingsPage()">
         <i class="fab fa-discord"></i>
         Discord
         </div> 
         </a>
 
         <a href="https://twitter.com/Tristan_Greg">
-        <div class="nav-btn third-tile inline" onclick="renderSettingsPage()">
+        <div class="side-bar-tile third-tile inline" onclick="renderSettingsPage()">
           <i class="fab fa-twitter-square"></i>
           Twitter
           </div>
           </a>
 
           <a href="https://arkbuddy.app">
-          <div class="nav-btn third-tile inline" onclick="renderSettingsPage()">
+          <div class="side-bar-tile third-tile inline" onclick="renderSettingsPage()">
             <i class="far fa-browser"></i>
             Website
             </div>
             </a>
 
     </div>
-    <div id="ad-div"></div>
+    <div class="basic-card bottom-ad">
+      <span class="side-bar-title"><i class="far fa-ad"></i></span>
+      <div id="ad-div"></div>
+    </div>
   </div>
 
-    <!-- -------------------------------- Modal -------------------------------- -->
-    <div id="exitMinimizeModal" class="modal">
-      <div class="modal-content">
-        <h3>Exit the app?</h3>
-        <p>
-          Exiting the app will close all the app windows and terminate the app
-          process.<br />
-          <br />
-          Are you sure?
-        </p>
-        <span class="buttonBar">
-          <button id="minimize" class="modalButton">
-            Minimize
-          </button>
-          <button id="exit" class="modalButton">
-            Exit
-          </button>
-        </span>
-      </div>
-    </div>
     <script src="app.js"></script>
   <script src="js/rForge.js"></script>
   <script src="js/tekGen.js"></script>

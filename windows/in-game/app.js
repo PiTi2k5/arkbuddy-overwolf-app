@@ -12,7 +12,7 @@ function renderHomePage() {
   reloadSettings();
 	appName.innerText = 'Home';
   appSubTitle.innerText = '';
-	appView.innerHTML =  `<div class="app-list">
+	appView.innerHTML =  `<div class="app-list basic-card no-padding clear">
   <div class="app-card animate__fadeInLeft" onclick="renderForgeApp()">
   <div>
   <img class="app-icon" src="https://res.cloudinary.com/tristangregory/image/upload/v1603242081/ark/items80px/80px-Refining_Forge.png">
@@ -91,10 +91,10 @@ function numFill(value) {
 }
 function renderSettingsPage() {
   appName.innerText = 'Settings';
-  appSubTitle.innerText = '';
+  appSubTitle.innerText = 'Change the settings to make the app work with your server.';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card clear no-padding">
+  <div class="basic-card">
   <div class="input-box three-quarter no-padding">
   <label for="fuelConsumpt">Fuel Consumption Rate</label>
   <input id="fuelConsumpt" type="number" min="1" onChange="updateSettings()" onKeyUp="updateSettings()">
@@ -121,7 +121,7 @@ function renderFeedbackPage() {
   appSubTitle.innerText = 'Share your feedback, ideas, suggestions or whatever else!';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card clear no-padding">
+  <div class="basic-card">
   <div class="input-box">
   <input placeholder="Your email (Optional)" id="userEmail">
   </div>
@@ -149,7 +149,7 @@ function submitForm() {
     })
   })  
   appView.innerHTML = `
-  <div class="basic-card clear no-padding">
+  <div class="basic-card">
   <span class="large-text">Thanks for the feedback!</span>
   </div>
   `;

@@ -17,13 +17,13 @@
 	box-sizing: border-box;
 	border: 0px solid red;
 	font-family: 'Montserrat', sans-serif;
-	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 *:focus {
 	outline: none
 }
 :root {
-	--mainradius: 15px;
+	--bodyColor: #f4f8fc;
+	--mainradius: 8px;
 	--mainColor: #2f669a;
 	--mainColorDark: #25517c;
 	--secondaryColor: #418855;
@@ -38,7 +38,7 @@ h3 {
 	font-size: 17px;
 }
 .arkbuddy-app {
-	background: var(--mainColor);
+	background: var(--bodyColor);
 	border: 0px solid #000;
 	width: 1073px;
 	height: 674px;
@@ -46,21 +46,22 @@ h3 {
 	border-radius: var(--mainRadius);
 	overflow: hidden;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
 	display: flex;
 	flex-wrap: wrap;
-	border: 3px solid #000;
+	border: 0px solid #000;
 }
 .side-nav-bar {
-	background: var(--mainColorDark);
+	background: var(--mainColor);
 	position: absolute;
 	left: 0;
-	top: 30px;
+	top: 40px;
 	bottom: 0;
-	border-right: 3px solid #000;
+	border-radius: 0 15px 15px 0px;
 	width: 85px;
 	display: flex;
 	flex-direction: column;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 .logo-box {
 	width: 100%;
@@ -106,18 +107,18 @@ h3 {
 	display: inline-block;
 	margin-left: 85px;
 	padding: 10px;
+	padding-top: 0;
 	overflow: auto;
 }
 .ad-space {
-	width: 420px;
+	width: 430px;
 	height: 86%;
 	display: inline-block;
 	position: relative;
-	border-left: 1px solid rgba(0,0,0,0.25);
 }
 .basic-card {
 	background: #fff;
-	border: 3px solid #000;
+	border: 0px solid #000;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 	border-radius: var(--mainRadius);
 	margin: auto;
@@ -129,6 +130,7 @@ h3 {
 	-moz-box-sizing: border-box;
 	/* Firefox, other Gecko */
 	box-sizing: border-box;
+    -webkit-animation: fadein 0.333s; /* Safari and Chrome */
 }
 .calc-details {
 	width: 550px;
@@ -139,14 +141,15 @@ h3 {
 #appName {
 	margin: 0;
 	font-size: 25px;
-	color: #fff;
+	color: var(--mainColor);
 	font-weight: bold;
 	margin-top: 7px;
+	margin-bottom: 5px;
 }
 #appSubTitle {
 	margin-top: 5px;
 	font-size: 15px;
-	color: rgba(255, 255, 255, 0.74);
+	color: #484848;
 }
 .clear {
 	background: transparent;
@@ -170,7 +173,7 @@ h3 {
 	width: 32%;
 	height: 130px;
 	text-align: center;
-	background: rgba(0, 0, 0, 0.15);
+	background:#fff;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 	padding: 15px;
 	border-radius: var(--mainRadius);
@@ -179,6 +182,11 @@ h3 {
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 10px;
+	transition: 0.333s;
+}
+.app-card:hover {
+	transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
 }
 .app-icon {
 	width: 50px;
@@ -187,20 +195,16 @@ h3 {
 	margin-bottom: 10px;
 }
 .app-name {
-	color: rgba(255, 255, 255, 0.75);
-	font-weight: 500;
+	color:#8a8a8a;
+	font-weight: 600;
 }
-.app-card:hover {
-	background: rgba(0, 0, 0, 0.4);
-	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-}
+
 .input-box {
 	width: 100%;
 }
 input, select, textarea {
-	background: #fff;
-	border: 3px solid #000;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	background: #f4f8fc;
+	border: 3px solid #484848;
 	border-radius: var(--mainRadius);
 	display: block;
 	width: 100%;
@@ -208,6 +212,10 @@ input, select, textarea {
 	font-size: 22px;
 	font-weight: 600;
 	margin-top: 4px;
+	transition: 0.333s;
+}
+input:focus, select:focus, textarea:focus {
+	border-color: var(--mainColor);
 }
 textarea {
 	height: 250px;
@@ -228,7 +236,7 @@ select {
 }
 label {
 	font-size: 17px;
-	color: #fff;
+	color: #484848;
 	font-weight: 500;
 	padding-left: 3px;
 }
@@ -238,7 +246,7 @@ label {
 .large-text {
 	font-size: 35px;
 	font-weight: 800;
-	color: var(--tertiaryColor);
+	color: #484848;
 }
 .medium-text {
 	font-size: 22px;
@@ -246,10 +254,10 @@ label {
 	color: var(--tertiaryColor);
 }
 .light {
-	color: rgba(255, 255, 255, 0.75);
+	color: #8a8a8a;
 }
 .lighter {
-	color: rgba(255, 255, 255, 0.65);
+	color:#928f8f;
 }
 .mini {
 	font-size: 16px;
@@ -257,11 +265,11 @@ label {
 .fuel-card {
 	display: flex;
 	flex-wrap: wrap;
+	margin-top: 15px;
 	justify-content: space-between;
 }
 .half-tile, .third-tile, .quarter-tile, .three-quarter {
-	padding-top: 25px;
-	padding-bottom: 25px;
+	padding-bottom: 20px;
 }
 .half-tile {
 	width: 50%;
@@ -304,7 +312,7 @@ label {
 }
 .light-border-top {
 	padding-top: 10px;
-	border-top: 1px solid rgba(255, 255, 255, 0.25);
+	border-top: 1px solid rgba(0, 0, 0, 0.25);
 }
 .large-space {
 	width: 100%;
@@ -348,7 +356,7 @@ label {
 	font-size: 35px;
 	font-weight: 700;
 	text-align: center;
-	color: #fff;
+	color: #484848;
 	margin-top: 5px!important;
 	margin-bottom: 0px!important;
 	text-transform: capitalize;
@@ -398,13 +406,95 @@ label {
 	box-shadow: 0 7px 14px rgba(50, 50, 93, .1), 0 3px 6px rgba(0, 0, 0, .08);
 }
 #ad-div {
-	position: absolute;
-	bottom: 5px;
-	right: 10px;
-	margin: auto;
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
 .inline {
 	display: inline-block;
+}
+
+.side-bar-title {
+	font-size: 17px;
+	color: #484848;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 5px;
+	padding-left: 3px;
+	display: block;
+	width: 100%;
+}
+
+.side-bar-tile {
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: var(--mainRadius);
+	text-align: center;
+	flex-direction: column;
+	color: rgba(47, 102, 154, 0.5);
+	font-size: 13px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	transition: 0.333s;
+}
+.side-bar-tile:hover {
+	background: rgba(0,0,0, 0.1);
+}
+.side-bar-tile .far, .side-bar-tile .fab {
+	font-size: 22px;
+	display: block;
+	color: rgba(47, 102, 154, 0.95);
+	margin: 3px;
+}
+
+.bottom-ad {
+	position: absolute;
+	bottom: 40px;
+	right: 6px;
+	margin: auto;
+}
+
+.tall-card {
+	height: 1200px;
+}
+
+option {
+	position: relative;
+}
+
+#appSubTitle::after {
+	content: ":)";
+	color: transparent
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
 }

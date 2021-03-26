@@ -333,7 +333,7 @@ padding: 5px;
 .icon {
 position: relative;
 width: var(--size, 40px);
-height: var(--size, 30px);
+height: var(--size, 40px);
 transition: 0.15s;
 }
 .icon svg {

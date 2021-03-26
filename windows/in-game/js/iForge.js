@@ -2,7 +2,7 @@ function renderiForgeApp() {
   appName.innerText = 'Industrial Forge Calculator';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card clear no-padding">
+  <div class="basic-card ">
   <div class="input-box">
   <label for="metalAmountIF">Metal Amount</label>
   <input placeholder="0" id="metalAmountIF" type="number" onKeyUp="iforgeData()" onChange="iforgeData()">
@@ -10,7 +10,7 @@ function renderiForgeApp() {
 
   </div>
   
-  <div id="fuelTable" class="basic-card clear no-padding fuel-card">
+  <div id="fuelTable" class="basic-card fuel-card">
   <div class="half-tile">
   <h3><span class="block large-text" id="gasRequired"></span>
   <span class="light">Gas Required</span></h3>

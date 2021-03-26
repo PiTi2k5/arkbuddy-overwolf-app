@@ -2,9 +2,9 @@ function renderCustomRecipeApp() {
   appName.innerText = 'Custom Recipe Calculator';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card clear no-padding fuel-card">
+  <div class="basic-card fuel-card">
   
-  <div class="sticky flex dark-background radius margin-bottom">
+  <div class="flex radius margin-bottom full-tile">
   <div class="quarter-tile">
   <img class="small-img" src="https://res.cloudinary.com/tristangregory/image/upload/v1614464536/ark/items/Health.png">
   <h3><span class="block medium-text" id="consumableHealth"></span>
@@ -306,7 +306,8 @@ function renderCustomRecipeApp() {
   <div class="full-tile light-border-top">
   <span class="setting-notice lighter mini">Crafting speed is set to <span class="light" id="craftingSpeedText"></span></span>
   </div>
-<div class="large-space" style="height: 100px;"></div>
+  </div>
+<div class="large-space" style="height: 500px;"></div>
   `;
   craftingSpeedText.innerText = craftingSpeedPercent +"%";
 craftCustomConsumable();

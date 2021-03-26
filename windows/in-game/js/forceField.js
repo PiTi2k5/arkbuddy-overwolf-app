@@ -2,7 +2,7 @@ function renderForcefieldApp() {
   appName.innerText = 'Forcefield Calculator';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card clear no-padding">
+  <div class="basic-card ">
   <div class="input-box half">
   <label for="elementFF">Element Amount</label>
   <input placeholder="0" id="elementFF" type="number" onKeyUp="forcefieldData()" onChange="forcefieldData()">
@@ -17,7 +17,7 @@ function renderForcefieldApp() {
   </div>
   </div>
   
-  <div id="fuelTable" class="basic-card clear no-padding fuel-card">
+  <div id="fuelTable" class="basic-card fuel-card">
 <div class="full-tile">
   <h3><span class="block large-text" id="time"></span>
   <span class="light">Time</span></h3>
