@@ -49,7 +49,7 @@ function renderCampfireApp() {
   </div>
   
   <div class="full-tile light-border-top">
-  <span class="setting-notice lighter mini">Fuel consumption rate is set to <span class="light" id="fuelConsumtion"></span></span>
+  <span class="setting-notice lighter mini">Fuel consumption rate is set to <span class="light" id="fuelConsumption"></span></span>
   </div>
   
   </div>
@@ -80,6 +80,6 @@ function campfireData() {
   sparkPowderAmt.innerText = sparkpowderAmount.toLocaleString();
   sparkPowderTot.innerText = sparkpowderTotal.toLocaleString() + " Total";
 	time.innerText = `${numFill(hours)}:${numFill(minutes)}:${numFill(seconds)}`;
-  fuelConsumtion.innerText = fuelConsumptionRate;
+  fuelConsumption.innerText = fuelConsumptionRate;
 	fuelTable.style.opacity = "1";
 }

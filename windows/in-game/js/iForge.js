@@ -21,7 +21,7 @@ function renderiForgeApp() {
   </div>
   
   <div class="full-tile light-border-top">
-  <span class="setting-notice lighter mini">Fuel consumption rate is set to <span class="light" id="fuelConsumtion"></span></span>
+  <span class="setting-notice lighter mini">Fuel consumption rate is set to <span class="light" id="fuelConsumption"></span></span>
   </div>
   
   </div>
@@ -48,7 +48,7 @@ function iforgeData() {
     time.innerText = `${numFill(hours)}:${numFill(minutes)}:${numFill(seconds)}`; 
     
     gasRequired.innerText = gasNeeded;
-    fuelConsumtion.innerText = fuelConsumptionRate;
+    fuelConsumption.innerText = fuelConsumptionRate;
     fuelTable.style.opacity = "1";
     //console.log(`${hours}:${minutes}:${seconds}`)
   

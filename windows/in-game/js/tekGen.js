@@ -24,7 +24,7 @@ function renderTekGenApp() {
   </div>
  
   <div class="full-tile light-border-top">
-  <span class="setting-notice lighter mini">Fuel consumption rate is set to <span class="light" id="fuelConsumtion"></span></span>
+  <span class="setting-notice lighter mini">Fuel consumption rate is set to <span class="light" id="fuelConsumption"></span></span>
   </div>
   
   </div>
@@ -46,7 +46,7 @@ function tekGenData() {
   var hours = parseInt(secondsTotal / 3600) % 24;
   var minutes = parseInt((secondsTotal % 3600) / 60);
   var seconds = parseInt(secondsTotal % 60);
-  fuelConsumtion.innerText = fuelConsumptionRate;
+  fuelConsumption.innerText = fuelConsumptionRate;
   time.innerText = `${numFill(days)}:${numFill(hours)}:${numFill(minutes)}:${numFill(seconds)}`;
   //time.innerText = `${days}:${hours}:${minutes}:${seconds}`
     if(radius) {

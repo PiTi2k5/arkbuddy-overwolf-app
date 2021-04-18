@@ -69,6 +69,8 @@ function renderHomePage() {
   </div>
   </div>
   
+
+
   
   
   </div>
@@ -76,13 +78,12 @@ function renderHomePage() {
 `;
 }
 
-//   Resource Calculator Render Card
-// <div class="app-card" onclick="renderResourceCalculatorApp()">
-//   <div>
-//   <img class="app-icon" src="https://res.cloudinary.com/tristangregory/image/upload/v1614467631/ark/items/tameRouletteIcon.png">
-//   <span class="app-name">Resource Calculator</span>
-//   </div>
-//   </div>
+{/* <div class="app-card" onclick="renderResourceCalculatorApp()">
+<div>
+<img class="app-icon" src="https://res.cloudinary.com/tristangregory/image/upload/v1614467631/ark/items/tameRouletteIcon.png">
+<span class="app-name">Resource Calculator</span>
+</div>
+</div> */}
 
 renderHomePage();
 
@@ -137,8 +138,16 @@ function renderFeedbackPage() {
 function submitForm() {
   var email = document.getElementById("userEmail").value;
   var textArea = document.getElementById("feedback").value;
-  console.log(email, textArea)
-  fetch('https://arkbuddy.app/ow/feedback', {
+  //console.log(email, textArea)
+
+  // fetch("http://httpstat.us/500")
+  // .then(function() {
+  //     console.log("ok");
+  // }).catch(function() {
+  //     console.log("error");
+  // });
+
+  fetch('https://arkbuddy.app/ow/feedbacks', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -147,7 +156,10 @@ function submitForm() {
       email: email,
       userFeedback: textArea
     })
-  })  
+  })
+  .catch(function() {
+    console.log("Poop")
+  })
   appView.innerHTML = `
   <div class="basic-card">
   <span class="large-text">Thanks for the feedback!</span>
@@ -172,7 +184,7 @@ function submitForm() {
 
 
 newHotkey = {
-  name: 'Show/Hide Tame App',
+  name: 'arkbuddyToggle',
   virtualKey: 75,
   modifiers: {
     ctrl: true //shift

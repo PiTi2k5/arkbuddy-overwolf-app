@@ -26,33 +26,33 @@ function renderForgeApp() {
   <div class="quarter-tile">
   <img class="small-img" src="https://ik.imagekit.io/tristangames/ark/icons/40/Thatch.png">
   <h3><span class="block large-text odometer" id="thatchAmt"></span>
-  <span class="light">Thatch per forge</span></h3>
+  <span class="light"><span class="fuel-name">Thatch</span> per forge</span></h3>
   <span class="lighter mini" id="thatchTot"></span>
   </div>
   
   <div class="quarter-tile">
   <img class="small-img" src="https://ik.imagekit.io/tristangames/ark/icons/40/Wood.png">
   <h3><span class="block large-text" id="woodAmt"></span>
-  <span class="light">Wood per forge</span></h3>
+  <span class="light"><span class="fuel-name">Wood</span> per forge</span></h3>
   <span class="lighter mini" id="woodTot"></span>
   </div>
   
   <div class="quarter-tile">
   <img class="small-img" src="https://ik.imagekit.io/tristangames/ark/icons/40/Sparkpowder.png">
   <h3><span class="block large-text" id="sparkPowderAmt"></span>
-  <span class="light">Sparkpowder per forge</span></h3>
+  <span class="light"><span class="fuel-name">Sparkpowder</span> per forge</span></h3>
   <span class="lighter mini" id="sparkPowderTot"></span>
   </div>
   
   <div class="quarter-tile">
   <img class="small-img" src="https://ik.imagekit.io/tristangames/ark/icons/40/AnglerGel.png">
   <h3><span class="block large-text" id="gelAmt"></span>
-  <span class="light">Angler Gel per forge</span></h3>
+  <span class="light"><span class="fuel-name">Angler Gel</span> per forge</span></h3>
   <span class="lighter mini" id="gelTot"></span>
   </div>
   
   <div class="full-tile light-border-top">
-  <span class="setting-notice lighter mini">Fuel consumption rate is set to <span class="light" id="fuelConsumtion"></span></span>
+  <span class="setting-notice lighter mini">Fuel consumption rate is set to <span class="light" id="fuelConsumption"></span></span>
   </div>
   
   </div>
@@ -105,7 +105,7 @@ function forgeData() {
     gelAmt.innerText = gelAmount.toLocaleString();
     gelTot.innerText = gelTotal.toLocaleString() + " Total";
     fuelTable.style.opacity = "1";
-    fuelConsumtion.innerText = fuelConsumptionRate;
+    fuelConsumption.innerText = fuelConsumptionRate;
     //console.log(`${hours}:${minutes}:${seconds}`)
 
 }
