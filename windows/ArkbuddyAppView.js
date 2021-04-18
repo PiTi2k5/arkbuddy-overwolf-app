@@ -47,6 +47,7 @@ define(["../scripts/services/drag-service.js"], function(DragService) {
           return;
         }
         this._version.textContent = `Version ${manifest.meta.version}`;
+        console.log(manifest.meta.version)
       });
     }
 
