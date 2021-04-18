@@ -307,7 +307,7 @@ function renderCustomRecipeApp() {
   <span class="setting-notice lighter mini">Crafting speed is set to <span class="light" id="craftingSpeedText"></span></span>
   </div>
   </div>
-<div class="large-space" style="height: 500px;"></div>
+<div class="large-space" style="height: 250px;"></div>
   `;
   craftingSpeedText.innerText = craftingSpeedPercent +"%";
 craftCustomConsumable();
