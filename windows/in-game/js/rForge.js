@@ -51,11 +51,12 @@ function renderForgeApp() {
   <span class="lighter mini" id="gelTot"></span>
   </div>
   
-  <div class="full-tile light-border-top">
+  </div>
+
+  <div class="full-tile">
   <span class="setting-notice lighter mini">Fuel consumption rate is set to <span class="light" id="fuelConsumption"></span></span>
   </div>
-  
-  </div>
+
   `;
   forgeData()
 }

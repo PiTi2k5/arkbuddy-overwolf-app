@@ -16,14 +16,14 @@
 	-mox-sizing: border-box;
 	box-sizing: border-box;
 	border: 0px solid red;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 *:focus {
 	outline: none
 }
 :root {
 	--bodyColor: #f4f8fc;
-	--mainradius: 8px;
+	--mainradius: 5px;
 	--mainColor: #2f669a;
 	--mainColorDark: #25517c;
 	--secondaryColor: #418855;
@@ -106,7 +106,7 @@ h3 {
 	display: inline-block;
 	margin-left: 85px;
 	padding: 10px;
-	padding-top: 0;
+	padding-top: 2px;
 	overflow: auto;
 }
 .ad-space {
@@ -118,8 +118,9 @@ h3 {
 .basic-card {
 	background: #fff;
 	border: 0px solid #000;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	/* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
 	border-radius: var(--mainRadius);
+	border: 2px solid #e5e7eb;
 	margin: auto;
 	display: block;
 	width: 97%;
@@ -173,7 +174,7 @@ h3 {
 	height: 130px;
 	text-align: center;
 	background:#fff;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	border: 2px solid #e5e7eb;
 	padding: 15px;
 	border-radius: var(--mainRadius);
 	transition: 0.333s;
@@ -185,7 +186,7 @@ h3 {
 }
 .app-card:hover {
 	transform: translateY(-2px);
-    box-shadow: 0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+	transform: scaleZ(5px);
 }
 .app-icon {
 	width: 50px;
@@ -203,8 +204,8 @@ h3 {
 }
 input, select, textarea {
 	background: #f4f8fc;
-	border: 3px solid #484848;
-	border-radius: var(--mainRadius);
+	border: 2px solid #e5e7eb;
+	border-radius: var(--mainRadius) !important;
 	display: block;
 	width: 100%;
 	padding: 10px;
@@ -218,6 +219,7 @@ input:focus, select:focus, textarea:focus {
 }
 textarea {
 	height: 250px;
+	resize: none;
 }
 select {
 	position: relative;
@@ -245,7 +247,7 @@ label {
 .large-text {
 	font-size: 35px;
 	font-weight: 800;
-	color: #484848;
+	color: #1f2937;
 }
 .medium-text {
 	font-size: 22px;
@@ -253,7 +255,7 @@ label {
 	color: var(--tertiaryColor);
 }
 .light {
-	color: #8a8a8a;
+	color: #6b7280;
 }
 .lighter {
 	color:#928f8f;
@@ -275,7 +277,7 @@ label {
 	text-align: center;
 }
 .third-tile {
-	width: 32.6%;
+	width: 32.5%;
 	text-align: center;
 }
 .quarter-tile {
@@ -376,10 +378,10 @@ label {
 	cursor: pointer;
 }
 .submit-btn {
-	background: var(--secondaryColor);
+	background: var(--mainColor);
 	display: block;
-	color: #000;
-	border: 3px solid #000;
+	color: #fff;
+	border: 0px solid #e5e7eb;
 	font-weight: bold;
 	font-size: 22px;
 	text-align: center;
@@ -392,7 +394,6 @@ label {
 	margin-top: 15px;
 	transition: all 0.333s;
 	text-decoration: none;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .submit-btn svg {
 	fill: #000;
@@ -504,7 +505,7 @@ option {
 
 #fuelConsumption, #craftingSpeedText {
 	color: var(--tertiaryColor);
-	font-weight: 600;
+	font-weight: 800;
 }
 
 #itemSearch {

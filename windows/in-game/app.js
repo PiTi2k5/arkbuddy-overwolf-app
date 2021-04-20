@@ -138,14 +138,6 @@ function renderFeedbackPage() {
 function submitForm() {
   var email = document.getElementById("userEmail").value;
   var textArea = document.getElementById("feedback").value;
-  //console.log(email, textArea)
-
-  // fetch("http://httpstat.us/500")
-  // .then(function() {
-  //     console.log("ok");
-  // }).catch(function() {
-  //     console.log("error");
-  // });
 
   fetch('https://arkbuddy.app/ow/feedbacks', {
     method: 'POST',
@@ -158,7 +150,7 @@ function submitForm() {
     })
   })
   .catch(function() {
-    console.log("Poop")
+    console.log("Fail")
   })
   appView.innerHTML = `
   <div class="basic-card">
