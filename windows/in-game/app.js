@@ -146,6 +146,7 @@ function submitForm() {
     },
     body: JSON.stringify({
       email: email,
+      app: "arkbuddy",
       userFeedback: textArea
     })
   })
@@ -162,26 +163,29 @@ function submitForm() {
 
 
 
+function convertTime(seconds) {
+  sec = Math.round(seconds);
+  var days = Math.floor(sec / (3600*24));
+  var hours = parseInt(sec / 3600) % 24;
+  var minutes = parseInt((sec % 3600) / 60);
+  var seconds = parseInt(sec % 60);
+  if(sec==0){return `${String(seconds)}s`}
+  if(days>0){return `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`}
 
-
-
-
-
-
-
-
-
-
-
-
-
-newHotkey = {
-  name: 'arkbuddyToggle',
-  virtualKey: 75,
-  modifiers: {
-    ctrl: true //shift
-  }
-};
-function setHK() {
-  overwolf.settings.hotkeys.assign(newHotkey, console.log)
+  if(days==0&&hours>0){return `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`}
+  if(hours==0&&minutes>0){return `${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`}
+  if(minutes==0&&seconds>0){return `${String(seconds).padStart(2, '0')}s`}
+	return `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
 }
+
+
+
+
+
+
+
+
+
+
+
+

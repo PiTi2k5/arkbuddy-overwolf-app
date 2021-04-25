@@ -303,9 +303,9 @@ function renderCustomRecipeApp() {
 </div>
 
   
-  <div class="full-tile light-border-top">
-  <span class="setting-notice lighter mini">Crafting speed is set to <span class="light" id="craftingSpeedText"></span></span>
   </div>
+  <div class="full-tile">
+  <span class="setting-notice lighter mini">Crafting speed is set to <span class="light" id="craftingSpeedText"></span></span>
   </div>
 <div class="large-space" style="height: 250px;"></div>
   `;
