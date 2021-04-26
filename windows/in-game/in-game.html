@@ -15,7 +15,7 @@
     <!-- -------------------------------- Header ------------------------------- -->
 
     <header class="app-header">
-      <h1>Arkbuddy</h1>
+      <h1>arkbuddy</h1>
       <div class="window-controls-group">
         <button disabled class="hotkeyPanel window-control">
           <span id="hotkey" class="inline">CTRL + B</span>
@@ -52,6 +52,12 @@
       </div>
       </div>
     <div class="bottom">
+      <div class="nav-btn center" onclick="renderAboutPage()">
+        <div>
+          <i class="far fa-info-circle"></i>
+        About
+        </div>
+        </div>
     <div class="nav-btn center" onclick="renderFeedbackPage()">
       <div>
         <i class="far fa-comment-smile"></i>
@@ -64,6 +70,7 @@
       Settings
       </div>
       </div>
+
       </div>
     </div>
     <!--- side nav bar end --->
@@ -127,7 +134,7 @@
     <script src="../../lib/require.js"></script>
     <script>
       require(["in-game-controller"], function(InGameController) {
-        console.log(`[INIT] in-game module loaded`);
+        //console.log(`[INIT] in-game module loaded`);
         const inGameController = new InGameController();
         inGameController.run();
       }, function(error) {

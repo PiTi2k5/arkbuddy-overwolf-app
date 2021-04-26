@@ -161,7 +161,24 @@ function submitForm() {
   return false;
 }
 
+function renderAboutPage() {
+  appName.innerText = 'About';
+  appSubTitle.innerText = '';
+  appView.innerHTML = ``;
+  appView.innerHTML = `
+  <div class="basic-card">
+  <img class="app-logo" src="https://res.cloudinary.com/tristangregory/image/upload/v1590385418/Arkbuddylogo.png">
+  <div class="setting-notice full-tile" id="checkUpdateNotice"></div>
+  <btn onclick="checkForUpdate()" class="settings-button">Check for update</btn>
+  <span class="section-title">Rate arkbuddy</span>
 
+  </div>
+  <div class="full-tile marginTop">
+  <span class="setting-notice lighter mini">arkbuddy V<span class="light" id="appVersionNumber"></span></span>
+  </div>
+  `;
+  getCurrentVersion()
+}
 
 function convertTime(seconds) {
   sec = Math.round(seconds);
@@ -183,7 +200,50 @@ function convertTime(seconds) {
 
 
 
+function getCurrentVersion() {
+  overwolf.extensions.current.getManifest(manifest => {
+    var appVersion = manifest.meta.version;
+    console.log(appVersion)
+    appVersionNumber.innerText = appVersion;
+  });
+}
 
+function checkForUpdate() {
+  overwolf.extensions.checkForExtensionUpdate(CheckForUpdateResult => {
+    console.log(CheckForUpdateResult)
+    if(CheckForUpdateResult.state=="UpToDate") {
+      checkUpdateNotice.innerText = "App is up to date"
+    }
+    if(CheckForUpdateResult.state=="UpdateAvailable") {
+      checkUpdateNotice.innerHTML = `
+      <span>Update available - Version ${CheckForUpdateResult.updateVersion}</span>
+      <btn onclick="updateApp()" class="settings-button">Update</btn>
+      `
+    }
+    if(CheckForUpdateResult.state=="PendingRestart") {
+      checkUpdateNotice.innerHTML = `
+      Update available - Pending restart
+      <span>Update available - Pending restart</span>
+      <btn onclick="relaunchApp()" class="settings-button">Relaunch</btn>
+      `
+    }
+  });
+}
+
+function updateApp() {
+  overwolf.extensions.updateExtension(results => {
+    console.log(results)
+    if(results.success=="true") {
+      checkUpdateNotice.innerText = `${results.info}`;
+    } 
+    if(results.success=="false") {
+      checkUpdateNotice.innerText = `${results.info}`;
+    }
+    
+  });
+}
+
+function relaunchApp() {overwolf.extensions.relaunch()}
 
 
 
