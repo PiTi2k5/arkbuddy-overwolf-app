@@ -62,6 +62,22 @@
           "width": 1100,
           "height": 900
         }
+      },
+      "timer": {
+        "file": "windows/timer/timer.html",
+        "in_game_only": false,
+        "focus_game_takeover": "ReleaseOnHidden",
+        "focus_game_takeover_release_hotkey": "arkbuddy_timer_showhide",
+        "transparent": true,
+        "resizable": false,
+        "block_top_window_navigation": true,
+        "restrict_to_game_bounds": false,
+        "popup_blocker": true,
+        "mute": true,
+        "size": {
+          "width": 200,
+          "height": 200
+        }
       }
     },
     "protocol_override_domains": { "googlesyndication": "http" },

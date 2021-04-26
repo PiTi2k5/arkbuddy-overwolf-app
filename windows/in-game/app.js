@@ -173,7 +173,7 @@ function renderAboutPage() {
   <span class="section-title">Rate arkbuddy</span>
 
   </div>
-  <div class="full-tile marginTop">
+  <div class="full-tile margin-top">
   <span class="setting-notice lighter mini">arkbuddy V<span class="light" id="appVersionNumber"></span></span>
   </div>
   `;
