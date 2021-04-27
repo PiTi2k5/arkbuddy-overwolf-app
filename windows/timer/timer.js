@@ -1,8 +1,3 @@
-overwolf.windows.onMessageReceived.addListener((message)=>{
-    if(message.id ===  '1'){
-      addTimer(message.content)
-  }
-})
 var timers = [];
 var audio = new Audio('https://www.dododex.com/media/audio/lowbeep.mp3');
 function checkTimer() {
@@ -35,3 +30,12 @@ function addTimer(seconds) {
 function currentTimers() {
   return console.log(`Currently running timers - ${timers.length} ${timers}`)
 }
+
+console.log("Timer open")
+
+overwolf.windows.onMessageReceived.addListener((message)=>{
+  if(message.id ===  '1'){
+    console.log(message.content)
+    timerApp.innerText = message.content;
+}
+})

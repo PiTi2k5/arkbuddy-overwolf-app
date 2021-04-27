@@ -51,6 +51,20 @@ h3 {
 	flex-wrap: wrap;
 	border: 0px solid #000;
 }
+.timer-app {
+	background: var(--bodyColor);
+	border: 0px solid #000;
+	width: auto;
+	height: auto;
+	position: relative;
+	border-radius: var(--mainRadius);
+	overflow: hidden;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
+	display: flex;
+	flex-wrap: wrap;
+	border: 0px solid #000;
+}
 .side-nav-bar {
 	background: #fff;
 	position: absolute;
@@ -119,6 +133,14 @@ h3 {
 	min-height: 675px;
 	display: inline-block;
 	margin-left: 85px;
+	padding: 10px;
+	padding-top: 2px;
+	overflow: auto;
+}
+#timerApp {
+	width: 550px;
+	height: 100%;
+	display: inline-block;
 	padding: 10px;
 	padding-top: 2px;
 	overflow: auto;
@@ -699,7 +721,9 @@ option {
 	margin: auto;
 	display: block;
 }
-
+.hidden {
+	display: none !important;
+}
 
 
 

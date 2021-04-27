@@ -10,22 +10,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body class="in-game">
-    <div id="ark-box" class="arkbuddy-app">
+    <div id="ark-box" class="timer-app">
 
     <!-- -------------------------------- Header ------------------------------- -->
 
     <header class="app-header">
       <h1>arkbuddy</h1>
       <div class="window-controls-group">
-        <button disabled class="hotkeyPanel window-control">
+        <button class="hidden" disabled class="hotkeyPanel window-control">
           <span id="hotkey" class="inline">CTRL + B</span>
         </button>
-        <a class="icon window-control" href="overwolf://settings/hotkeys">
+        <a class="icon window-control hidden" href="overwolf://settings/hotkeys">
           <svg>
             <use xlink:href="/img/header_icons.svg#window-control_settings" />
           </svg>
         </a>
-        <button class="icon window-control" id="minimizeButton">
+        <button class="icon window-control hidden" id="minimizeButton">
           <svg>
             <use xlink:href="../../img/header_icons.svg#window-control_minimize" />
           </svg>
@@ -42,17 +42,19 @@
 
     <!---  app start --->
 
-  <div id="app"></div>
+  <div id="timerApp">
+    TIMER goes here
+  </div>
     <!---  app end --->
  
 
     <script src="timer.js"></script>
     <script src="../../lib/require.js"></script>
     <script>
-      require(["in-game-controller"], function(InGameController) {
+      require(["timer-controller"], function(TimerController) {
         //console.log(`[INIT] in-game module loaded`);
-        const inGameController = new InGameController();
-        inGameController.run();
+        const timerController = new TimerController();
+        timerController.run();
       }, function(error) {
         console.log(`[INIT] failed to load in-game module ${error}`);
       });

@@ -248,4 +248,56 @@ function relaunchApp() {overwolf.extensions.relaunch()}
 
 
 
+function obtainWindow(name) {
+   return new Promise((resolve, reject) => {
+     overwolf.windows.obtainDeclaredWindow(name, (response) => {
+       if (response.status !== "success") {
+         return reject(response);
+       }
+ 
+       resolve(response);
+     });
+   });
+ }
+ 
+ function restore(name) {
+   return new Promise(async (resolve, reject) => {
+     try {
+       await obtainWindow(name);
+       overwolf.windows.restore(name, (result) => {
+         if (result.status === "success") {
+           resolve(result);
+         } else {
+           reject(result);
+         }
+       });
+     } catch (e) {
+       reject(e);
+     }
+   });
+ }
+
+ async function openTimerWindow(time) {
+  try {
+    const windowOpenedResult = await restore('timer')
+
+    overwolf.windows.sendMessage('timer', '1', time, ()=>{console.log('Message sent to window "secondWindow"')})
+    overwolf.windows.sendMessage('timer', '1', time, ()=>{console.log('Message sent to window "secondWindow"')})
+    
+    
+} catch (error) {
+    console.log(error) //error
+}
+ }
+
+
+
+
+
+
+
+
+
+
+
 
