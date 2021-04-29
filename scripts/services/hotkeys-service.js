@@ -148,4 +148,5 @@ define(['../constants/hotkeys-ids.js'], function (HOTKEYS) {
 		setToggleHotkey,
 		addHotkeyChangeListener
 	};
+	
 });

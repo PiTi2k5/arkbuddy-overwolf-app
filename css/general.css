@@ -97,29 +97,30 @@ h3 {
     color: #fff;
     text-align: center;
     flex-direction: column;
-    color: rgba(0, 0, 0, 0.5);
+    color: #6b7280;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     padding-top: 7.5px;
     margin-bottom: 5px;
     padding-bottom: 7.5px;
     transition: 0.44s;
+	border: 2px solid transparent;
 }
 .nav-btn:hover {
-	background: var(--mainColor);
-	color: rgba(255, 255, 255, 0.5);
+	background: #f4f8fc;
+    border: 2px solid #e5e7eb;
 
 }
 .nav-btn:hover .far, .nav-btn .fab {
 	font-size: 22px;
 	display: block;
-	color: rgba(255, 255, 255, 0.95);
-	margin: 3px;
+	color: #1f2937;
+	margin-bottom: 3px;
 }
 .nav-btn .far, .nav-btn .fab {
 	font-size: 22px;
 	display: block;
-	color: rgba(0, 0, 0, 0.95);
+	color: #1f2937;
 	margin: 3px;
 	transition: 0.444s;
 }
@@ -146,7 +147,7 @@ h3 {
 	overflow: auto;
 }
 .ad-space {
-	width: 430px;
+	width: 435px;
 	height: 86%;
 	display: inline-block;
 	position: relative;
@@ -182,11 +183,13 @@ h3 {
 	font-weight: bold;
 	margin-top: 7px;
 	margin-bottom: 5px;
+	letter-spacing: -0.025em;
 }
 #appSubTitle {
 	margin-top: 5px;
 	font-size: 15px;
 	color: #484848;
+	letter-spacing: -0.025em;
 }
 .clear {
 	background: transparent;
@@ -283,7 +286,7 @@ label {
 }
 .large-text {
 	font-size: 35px;
-	font-weight: 800;
+	font-weight: 600;
 	color: #1f2937;
 }
 .section-title {
@@ -301,6 +304,7 @@ label {
 }
 .light {
 	color: #6b7280;
+	font-weight: 800;
 }
 .lighter {
 	color:#928f8f;
@@ -655,14 +659,15 @@ option {
 .data-header-title {
 	width: 33%;
 	font-weight: 500;
-	font-size: 17px
+	font-size: 14px;
+	text-transform: uppercase;
 }
 .data-line {
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 7px;
+	padding-bottom: 7px;
 	font-weight: 600;
 }
 .data-line-title {

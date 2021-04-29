@@ -33,7 +33,7 @@
   position: sticky;
   top: 0;
   display: flex;
-  background:var(--mainColorDark) !important;
+  background:var(--mainColor) !important;
   align-items: center;
   z-index: 9999;
   width: 100%;

@@ -42,7 +42,14 @@
         "action-type": "toggle",
         "default": "Ctrl+B",
         "passthrough": false
-      }
+      },
+      "the_test": { 
+        "name": "Ark test",
+        "title": "Show Player",
+        "action-type": "custom",
+        "default": "Ctrl+Y",
+        "passthrough": true
+          }
     },
     "game_events": [10778],
     "start_window": "in_game",

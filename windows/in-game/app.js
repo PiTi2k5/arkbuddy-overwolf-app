@@ -289,15 +289,14 @@ function obtainWindow(name) {
     console.log(error) //error
 }
  }
+ overwolf.settings.hotkeys.onPressed.addListener(event => {
+ console.log(event.name)
+  });
 
 
-
-
-
-
-
-
-
-
-
-
+// function test() {
+//   overwolf.extensions.io.getStoragePath(overwolf.extensions.io.enums.StorageSpace.documents, object=>{
+//     var gameFolder = `${Stringify(object).replace("\OneDrive\Pictures\Overwolf\Arkbuddy","\Documents\My Games\Binding of Isaac Repentance")}`
+//     console.log(gameFolder)
+//   })
+// }

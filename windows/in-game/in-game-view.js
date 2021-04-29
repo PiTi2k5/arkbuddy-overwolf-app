@@ -90,8 +90,3 @@ define(["../ArkbuddyAppView.js"], function(ArkbuddyAppView) {
 
   return InGameView;
 });
-
-
-function getHotKeyName() {
-  console.log(HotkeysService.getToggleHotkey())
-}
