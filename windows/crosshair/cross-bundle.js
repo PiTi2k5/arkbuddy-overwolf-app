@@ -11371,6 +11371,7 @@ $__System.register('2', ['1', '6', '7', '8', '9', 'a'], function (_export) {
                     if (window.localStorage.state) {
                         this.state = JSON.parse(localStorage.state);
                     } else {
+                      //Change crosshair settings
                         this.state = {
                             centerDot: 0,
                             crossSize: 70,
