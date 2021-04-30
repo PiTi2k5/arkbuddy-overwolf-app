@@ -43,7 +43,7 @@
         "default": "Ctrl+B",
         "passthrough": false
       },
-      "the_test": { 
+      "crossHairToggle": { 
         "name": "Ark test",
         "title": "Show Player",
         "action-type": "custom",

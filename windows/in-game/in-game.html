@@ -153,14 +153,16 @@
       function onWindowStateChanged(state) {
    
           // when state changes to minimized, call removeAd()
-          if (state.window_state === "minimized") {
+          if (state.window_state === "minimized" && state.window_name=="in_game") {
             owAd.removeAd();
             console.log("Ads removed")
           }
           // when state changes from minimized to normal, call refreshAd()
-          else if (
+          if (
             state.window_previous_state === "minimized" &&
-            state.window_state === "normal"
+            state.window_state === "normal" && 
+            state.window_name=="in_game"
+            
           ) {
             owAd.refreshAd();
             console.log("Ads refreshed")

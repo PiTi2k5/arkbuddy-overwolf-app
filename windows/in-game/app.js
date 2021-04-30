@@ -300,16 +300,18 @@ function obtainWindow(name) {
 }
  }
  overwolf.settings.hotkeys.onPressed.addListener(event => {
- console.log(event.name)
+   console.log(event.name)
+  if(event.name=="crossHairToggle"){toggleCrosshair()}
   });
 
-  function closeCrossHair() {
-    overwolf.windows.close('crosshair');
-  }
+async function toggleCrosshair() {
+  overwolf.windows.getWindowState('crosshair',state=>{
+    console.log(state)
+    if (state.window_state === "minimized" || state.window_state === "closed") {
+      openCrossHair()
+    } else if (state.window_state === "normal" || state.window_state === "maximized") {
+      overwolf.windows.minimize('crosshair');
+    }
+  });
 
-// function test() {
-//   overwolf.extensions.io.getStoragePath(overwolf.extensions.io.enums.StorageSpace.documents, object=>{
-//     var gameFolder = `${Stringify(object).replace("\OneDrive\Pictures\Overwolf\Arkbuddy","\Documents\My Games\Binding of Isaac Repentance")}`
-//     console.log(gameFolder)
-//   })
-// }
+}
