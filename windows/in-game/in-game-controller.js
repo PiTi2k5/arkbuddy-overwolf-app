@@ -10,10 +10,6 @@ define([
 
     constructor() {
       this.inGameView = new InGameView();
-
-      // this._gameEventHandler = this._gameEventHandler.bind(this);
-      // this._infoUpdateHandler = this._infoUpdateHandler.bind(this);
-      // this._eventListener = this._eventListener.bind(this);
       this._updateHotkey = this._updateHotkey.bind(this);
     }
 
@@ -45,21 +41,6 @@ define([
         }
       }
     }
-
-    // // Logs events
-    // _gameEventHandler(event) {
-    //   let isHightlight = false;
-    //   switch (event.name) {
-    //     case 'general_stats':
-    //     case 'item_stats':
-    //     case 'location':
-    //     case 'mobs_stats':
-    //       isHightlight = true;
-    //   }
-    //   this.inGameView.logEvent(JSON.stringify(event), isHightlight);
-    // }
-
-    // Logs info updates
     _infoUpdateHandler(infoUpdate) {
       this.inGameView.logInfoUpdate(JSON.stringify(infoUpdate), false);
     }
