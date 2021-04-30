@@ -147,7 +147,7 @@ h3 {
 	overflow: auto;
 }
 .ad-space {
-	width: 435px;
+	width: 438px;
 	height: 86%;
 	display: inline-block;
 	position: relative;
@@ -492,7 +492,7 @@ label {
 
 .side-bar-title {
 	font-size: 17px;
-	color: #484848;
+	color: #1f2937;
 	font-weight: 600;
 	text-align: center;
 	margin-bottom: 5px;
@@ -512,9 +512,11 @@ label {
 	padding-top: 15px;
 	padding-bottom: 15px;
 	transition: 0.333s;
+	border: 2px solid transparent;
 }
 .side-bar-tile:hover {
-	background: rgba(0,0,0, 0.1);
+	background: #f4f8fc;
+    border: 2px solid #e5e7eb;
 }
 .side-bar-tile .far, .side-bar-tile .fab {
 	font-size: 22px;
@@ -731,7 +733,15 @@ option {
 }
 
 
-
+#aad-div {
+	height: 300px;
+	width: 400px;
+	background: #f4f8fc;
+	border: 2px solid #e5e7eb;
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+}
 
 
 

@@ -66,7 +66,6 @@ function renderForgeApp() {
 
   <div class="full-tile">
   <span class="setting-notice lighter mini">Fuel consumption rate is set to <span class="light" id="fuelConsumption"></span></span>
-  <div id="timerBtn"></div>
   </div>
 
   `;
@@ -117,7 +116,6 @@ function forgeData() {
     gelTot.innerText = gelTotal.toLocaleString();
     fuelTable.style.opacity = "1";
     fuelConsumption.innerText = fuelConsumptionRate;
-    //timerBtn.innerHTML = `<button onclick="openTimerWindow(${secondsTotal})">Timer</button>`;
     //console.log(`${hours}:${minutes}:${seconds}`)
 
 }

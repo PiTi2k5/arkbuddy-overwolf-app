@@ -2,6 +2,7 @@ const appView = document.getElementById('app');
 const appName = document.getElementById('appName');
 var fuelConsumptionRate = localStorage.getItem('fuelConsumptionRate') || 1;
 var craftingSpeedPercent = localStorage.getItem('craftingSpeedPercent') || 100;
+var babyMatureSpeedRate = localStorage.getItem('babyMatureSpeedRate') || 1;
 var craftingSpeed = parseInt(craftingSpeedPercent / 100);
 function reloadSettings() {
   fuelConsumptionRate = localStorage.getItem('fuelConsumptionRate') || 1;
@@ -106,15 +107,29 @@ function renderSettingsPage() {
   <input id="craftSpeed" type="number" min="100" onChange="updateSettings()" onKeyUp="updateSettings()">
   </div>
 
+  <div class="input-box three-quarter no-padding">
+  <label for="babyMatureSpeed">Baby Mature Speed</label>
+  <input id="babyMatureSpeed" type="number" min="1" onChange="updateSettings()" onKeyUp="updateSettings()">
+  </div>
+
+  <div class="input-box three-quarter no-padding">
+  <label>Crosshair</label>
+    <btn onclick="openCrossHair()">Open</btn>
+    <btn onclick="closeCrossHair()">Close</btn>
+  </div>
+
+  
   </div>
   `;
   
   fuelConsumpt.value = localStorage.getItem('fuelConsumptionRate') || 1;
   craftSpeed.value = localStorage.getItem('craftingSpeedPercent') || 100;
+  babyMatureSpeed.value = localStorage.getItem('babyMatureSpeedRate') || 1;
 }
 function updateSettings() {
   localStorage.setItem('fuelConsumptionRate', fuelConsumpt.value)
   localStorage.setItem('craftingSpeedPercent', craftSpeed.value)
+  localStorage.setItem('babyMatureSpeedRate', babyMatureSpeed.value)
 }
 
 function renderFeedbackPage() {
@@ -277,14 +292,9 @@ function obtainWindow(name) {
    });
  }
 
- async function openTimerWindow(time) {
+ async function openCrossHair() {
   try {
-    const windowOpenedResult = await restore('timer')
-
-    overwolf.windows.sendMessage('timer', '1', time, ()=>{console.log('Message sent to window "secondWindow"')})
-    overwolf.windows.sendMessage('timer', '1', time, ()=>{console.log('Message sent to window "secondWindow"')})
-    
-    
+    const windowOpenedResult = await restore('crosshair') 
 } catch (error) {
     console.log(error) //error
 }
@@ -293,6 +303,9 @@ function obtainWindow(name) {
  console.log(event.name)
   });
 
+  function closeCrossHair() {
+    overwolf.windows.close('crosshair');
+  }
 
 // function test() {
 //   overwolf.extensions.io.getStoragePath(overwolf.extensions.io.enums.StorageSpace.documents, object=>{
