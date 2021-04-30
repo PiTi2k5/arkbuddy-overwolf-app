@@ -112,16 +112,24 @@ function renderSettingsPage() {
   <input id="babyMatureSpeed" type="number" min="1" onChange="updateSettings()" onKeyUp="updateSettings()">
   </div>
 
-  <div class="input-box three-quarter no-padding">
+  <div class="input-box three-quarter no-padding hidden">
   <label>Crosshair</label>
     <btn onclick="openCrossHair()">Open</btn>
     <btn onclick="closeCrossHair()">Close</btn>
   </div>
 
+  </div>
+
+  <div class="basic-card clear">
+  <div class="setting-notice full-tile" id="checkUpdateNotice"></div>
+  <btn onclick="checkForUpdate()" class="settings-button">Check for update</btn>
+  <div class="full-tile margin-top">
+  <span class="setting-notice lighter mini">arkbuddy version <span class="light" id="appVersionNumber"></span></span>
+  </div>
   
   </div>
   `;
-  
+  getCurrentVersion()
   fuelConsumpt.value = localStorage.getItem('fuelConsumptionRate') || 1;
   craftSpeed.value = localStorage.getItem('craftingSpeedPercent') || 100;
   babyMatureSpeed.value = localStorage.getItem('babyMatureSpeedRate') || 1;
@@ -176,24 +184,6 @@ function submitForm() {
   return false;
 }
 
-function renderAboutPage() {
-  appName.innerText = 'About';
-  appSubTitle.innerText = '';
-  appView.innerHTML = ``;
-  appView.innerHTML = `
-  <div class="basic-card">
-  <img class="app-logo" src="https://res.cloudinary.com/tristangregory/image/upload/v1590385418/Arkbuddylogo.png">
-  <div class="setting-notice full-tile" id="checkUpdateNotice"></div>
-  <btn onclick="checkForUpdate()" class="settings-button">Check for update</btn>
-  <span class="section-title">Rate arkbuddy</span>
-
-  </div>
-  <div class="full-tile margin-top">
-  <span class="setting-notice lighter mini">arkbuddy V<span class="light" id="appVersionNumber"></span></span>
-  </div>
-  `;
-  getCurrentVersion()
-}
 
 function convertTime(seconds) {
   sec = Math.round(seconds);

@@ -3,7 +3,7 @@
   "type": "WebApp",
   "meta": {
     "name": "Arkbuddy",
-    "version": "1.1.9",
+    "version": "1.2.0",
     "minimum-overwolf-version": "0.120.0",
     "author": "TristanGames",
     "icon": "img/logo-small.png",
@@ -44,8 +44,8 @@
         "passthrough": false
       },
       "crossHairToggle": { 
-        "name": "Ark test",
-        "title": "Show Player",
+        "name": "crosshairToggle",
+        "title": "Toggle Crosshair",
         "action-type": "custom",
         "default": "Ctrl+Y",
         "passthrough": true

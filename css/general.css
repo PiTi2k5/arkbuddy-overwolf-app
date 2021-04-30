@@ -302,6 +302,10 @@ label {
 	font-weight: 600;
 	color: var(--tertiaryColor);
 }
+.highlight {
+	color: var(--tertiaryColor);
+	font-weight: 600;
+}
 .light {
 	color: #6b7280;
 	font-weight: 800;
@@ -488,6 +492,9 @@ label {
 
 .inline {
 	display: inline-block;
+}
+.block {
+	display: block !important;
 }
 
 .side-bar-title {
@@ -742,7 +749,9 @@ option {
 	justify-content: center; 
 	align-items: center;
 }
-
+.hotkey-btn {
+	
+}
 
 
 
