@@ -11373,11 +11373,11 @@ $__System.register('2', ['1', '6', '7', '8', '9', 'a'], function (_export) {
                     } else {
                         this.state = {
                             centerDot: 0,
-                            crossSize: 100,
+                            crossSize: 70,
                             crossSpread: 0,
                             crossLength: 0,
-                            crossColor: { r: 0, g: 255, b: 0, a: 1 },
-                            dotColor: { r: 0, g: 255, b: 0, a: 1 },
+                            crossColor: { r: 255, g: 255, b: 255, a: 1 },
+                            dotColor: { r: 255, g: 255, b: 255, a: 0.75 },
                             currentColor: { r: 0, g: 255, b: 0, a: 1 },
                             dotDiameter: 10,
                             strokeWidth: 1,
