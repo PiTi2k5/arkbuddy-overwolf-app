@@ -31,6 +31,7 @@
 
 .app-header {
   position: sticky;
+  height: 50px;
   top: 0;
   display: flex;
   background:var(--mainColor) !important;
@@ -63,18 +64,21 @@
 .app-header img {
   padding-left: 10px;
   margin: 0;
+  margin-top: 2px;
 }
 
 .window-controls-group {
+  height: 100%;
   z-index: 1001;
   margin-left: auto;
   display: flex;
-  --color: #a8a8a8;
+  --color: #6b7280;
   --color-hover: #dedede;
   --bg-color-hover: #464646;
 }
 
 .window-control {
+  height: 100%;
   color: #fff;
   background-color: transparent;
 }
