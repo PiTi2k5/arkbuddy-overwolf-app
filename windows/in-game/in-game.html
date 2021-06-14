@@ -15,7 +15,7 @@
     <!-- -------------------------------- Header ------------------------------- -->
 
     <header class="app-header">
-      <h1>arkbuddy</h1>
+      <h1><img class="mini-logo" src="../../img/ArkbuddyIcon.svg"></h1>
       <div class="window-controls-group">
         <button disabled class="hotkeyPanel window-control hotkey-btn">
           <span class="inline">Toggle Crosshair</span> <span id="hotkeyCH" class="block highlight">CTRL + Y</span>
@@ -46,80 +46,62 @@
 
       <!--- side nav bar start --->
   <div class="side-nav-bar">
-    <div class="logo-box" onclick="renderHomePage()">
-      <img src="../../img/ArkbuddyIcon.svg">
-      </div>
-    <div class="nav-btn center" onclick="renderHomePage()">
+    <!-- <div class="logo-box" onclick="renderHomePage()">
+      <img src="../../img/Arkbuddylogo Final.svg">
+      </div> -->
+    <div class="nav-btn center-vert-text" onclick="renderHomePage()">
       <div>
         <i class="far fa-home"></i>
       Home
       </div>
       </div>
-    <div class="bottom">
-      <div class="nav-btn center" onclick="toggleCrosshair()">
+
+      <div class="nav-btn center-vert-text hidden" onclick="renderLibraryPage()">
+        <div>
+          <i class="far fa-images"></i>
+        Library
+        </div>
+        </div>
+      
+      <div class="nav-btn center-vert-text" onclick="toggleCrosshair()">
         <div>
           <i class="far fa-crosshairs"></i>
         Toggle Crosshair
         </div>
         </div>
-    <div class="nav-btn center" onclick="renderFeedbackPage()">
+    <div class="nav-btn center-vert-text" onclick="renderFeedbackPage()">
       <div>
         <i class="far fa-comment-smile"></i>
       Feedback
       </div>
       </div>
-    <div class="nav-btn center" onclick="renderSettingsPage()">
+    <div class="nav-btn center-vert-text" onclick="renderSettingsPage()">
       <div>
         <i class="far fa-cog"></i>
       Settings
       </div>
       </div>
+    <div class="bottom">
+
       
+      <div id="ad-div"></div>
 
       </div>
     </div>
     <!--- side nav bar end --->
+    <div class="app-wrapper">
   <div class="calc-details">
   <div class="basic-card clear">
     <p id="appName"></p>
     <span id="appSubTitle"></span>
     </div>
   </div>
-  <div class="extra-space"></div>
     <!---  app start --->
   <div id="app"></div>
+</div>
     <!---  app end --->
     <!---  ad start --->
-  <div class="ad-space">
-    <div class="basic-card margin-bottom">
-      <span class="side-bar-title">Follow Arkbuddy!</span>
-      <a href="https://discord.gg/nv8wpcW">
-      <div class="side-bar-tile third-tile inline">
-        <i class="fab fa-discord"></i>
-        Discord
-        </div> 
-        </a>
 
-        <a href="https://twitter.com/Tristan_Greg">
-        <div class="side-bar-tile third-tile inline">
-          <i class="fab fa-twitter-square"></i>
-          Twitter
-          </div>
-          </a>
-
-          <a href="https://arkbuddy.app">
-          <div class="side-bar-tile third-tile inline">
-            <i class="far fa-browser"></i>
-            Website
-            </div>
-            </a>
-
-    </div>
-    <div class="basic-card bottom-ad">
-      <span class="side-bar-title"><i class="far fa-ad"></i> Thanks for supporting us!</span>
-      <div id="ad-div"></div>
-    </div>
-  </div>
 
   <script src="app.js"></script>
   <script src="js/rForge.js"></script>
@@ -131,9 +113,11 @@
   <script src="js/customRecipe.js"></script>
   <script src="js/tameRoulette.js"></script>
   <script src="js/tameRoulette.js"></script>
-  <!-- <script src="js/resourceCalculator.js"></script>
-  <script src="js/resourceCalcData.js"></script>
-  <script src="https://assets.codepen.io/189049/arkItemNames.js"></script>  -->
+  <script src="js/resourceCalculator.js"></script>
+  <script defer src="js/resourceCalcData.js"></script>
+  <script src="https://assets.codepen.io/189049/itemNames.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+
 
     
     <script src="../../lib/require.js"></script>
