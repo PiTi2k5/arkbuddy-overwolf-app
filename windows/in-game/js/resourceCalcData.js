@@ -1,33 +1,36 @@
-
-
 var items = [];
 var userAddedItems = [];
 var userAddedItemsTotal = [];
-
-// var favorites = localStorage.getItem("userFavorites");
-// if(!localStorage.getItem("userFavorites")) {localStorage.setItem("verFavorites",[]);}
-
-var favItemsArray = [{name:"Bow", amt:"1"}]
-localStorage.setItem("userFavorites",JSON.stringify(favItemsArray));
+var favorites = localStorage.getItem("userFavorites");
+if (!localStorage.getItem("userFavorites")) {
+	localStorage.setItem("userFavorites", []);
+}
+var favItemsArray = [{
+	name: "Bow",
+	amt: "1"
+}]
+//localStorage.setItem("userFavorites", JSON.stringify(favItemsArray));
+var maxSearchResults = 50;
 function getData() {
-fetch('https://assets.codepen.io/189049/items.json').then(response => response.json()).then(data => {
+	fetch('https://assets.codepen.io/189049/arkItemsList.json').then(response => response.json()).then(data => {
 		dataString = JSON.stringify(data);
 		itemsJSON = JSON.parse(dataString)
 	}).then((data) => {
-    itemsListAll = dataString;
 		items = itemsJSON;
-
 		startApp();
 	})
 }
-//getData();
+getData();
 
 function startApp() {
-	//addItem('Bow', 1, 0)
-  renderSearchList();
+  
+//   getURLParameters()
+//   setTimeout(() => { loadingPage.classList.add("removed") }, 250);
+
 }
 
 function addItem(item, qty, edit) {
+  //console.log(items[item])
 	userAddedItemsTotal = [];
 	var itemInfo = {
 		name: item,
@@ -35,7 +38,7 @@ function addItem(item, qty, edit) {
 	};
 	userAddedItems.push(itemInfo)
 	userAddedItemsAmt = userAddedItems.length;
-  closeAllItems();
+	closeAllItems();
 	render(item, qty, edit);
 	renderTotal();
 	//return `${item} added!`;
@@ -69,22 +72,21 @@ function render(item, qty, edit) {
 	t = 0;
 	while (t < userAddedItemsAmt) {
 		//console.log(userAddedItems[t])
-    if(!items[userAddedItems[t].name].resources) {
-      return
-    }
+		if (!items[userAddedItems[t].name].resources) {
+			return
+		}
 		let $item = document.createElement('div');
 		var creationAmount = userAddedItems[t].qty;
 		$item.id = `${userAddedItems[t].name}-box`;
 		$item.className = 'itemListCard';
 		$item.innerHTML = `
     <div class="itemInfoBox tool-tip">
-    <img src="https://www.arkresourcecalculator.com/assets/images/80px-${items[userAddedItems[t].name].imageName}">
+    <img onclick="deleteItem(${t})" src="https://www.arkresourcecalculator.com/assets/images/80px-${items[userAddedItems[t].name].imageName}">
+  <input min="1" class="itemAmountInput center-text mini-input" type="number" onchange="inputChange(${t})" id="${t}Shown" value="${userAddedItems[t].qty}">
+  <input class="hidden" hidden id="${t}og" value="${userAddedItems[t].qty}">
   <span class="tooltiptext">${items[userAddedItems[t].name].displayName}</span>
-  <input min="1" class="itemAmountInput" type="number" onchange="inputChange(${t})" id="${t}Shown" value="${userAddedItems[t].qty}">
-  <input hidden id="${t}og" value="${userAddedItems[t].qty}">
   </div>
   <div class="recipe-box" id="item-${t}-recipe"></div>
-  <div class="delete"><p onclick="deleteItem(${t})""><svg width="20" height="20" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 1C5.22386 1 5 1.22386 5 1.5C5 1.77614 5.22386 2 5.5 2H9.5C9.77614 2 10 1.77614 10 1.5C10 1.22386 9.77614 1 9.5 1H5.5ZM3 3.5C3 3.22386 3.22386 3 3.5 3H5H10H11.5C11.7761 3 12 3.22386 12 3.5C12 3.77614 11.7761 4 11.5 4H11V12C11 12.5523 10.5523 13 10 13H5C4.44772 13 4 12.5523 4 12V4L3.5 4C3.22386 4 3 3.77614 3 3.5ZM5 4H10V12H5V4Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></p></div>
   `;
 		itemsList.appendChild($item);
 		var itemRecipeID = document.getElementById(`item-${t}-recipe`);
@@ -93,14 +95,11 @@ function render(item, qty, edit) {
 		recipeItemLength = recipe.length;
 		while (i < recipeItemLength) {
 			let $p = document.createElement('div');
-			$p.className = 'tame-data';
+			$p.className = 'recipe-item-box tool-tip';
 			$p.innerHTML = `
-     <div class="recipe-item-box tool-tip">
           <img src="https://www.arkresourcecalculator.com/assets/images/80px-${items[recipe[i].itemName].imageName}">
-
-    <p class="item-name">${recipe[i].amount * creationAmount}</p> 
+    <input class="item-name fakeInput mini-input" readonly value="${recipe[i].amount * creationAmount}">
     <span class="tooltiptext">${recipe[i].itemName}</span>
-    </p>
     `;
 			itemName = recipe[i].itemName;
 			itemAmount = recipe[i].amount * creationAmount;
@@ -129,7 +128,7 @@ function renderTotal(edited, HighorLow, newEditedNumber) {
 		item = userAddedItemsTotal[IT].itemName;
 		qty = userAddedItemsTotal[IT].itemAmount;
 		if (document.getElementById(item)) {
-			totalInput = document.getElementById(item.replaceAll(" ", "").toUpperCase())
+			totalInput = document.getElementById(item.replace(" ", "").replace(" ", "").replace(" ", "").replace(" ", "").replace(" ", "").toUpperCase())
 			numberT = parseInt(totalInput.value, 10);
 			numberY = parseInt(qty, 10);
 			if (edited) {
@@ -154,7 +153,7 @@ function renderTotal(edited, HighorLow, newEditedNumber) {
 			$p.innerHTML = `
            <img src="https://www.arkresourcecalculator.com/assets/images/80px-${items[item].imageName}">
     <span class="tooltiptext">${item}</span>
-    <input class="item-name" readonly id="${item.replaceAll(" ","").toUpperCase()}"" value="${qty}">
+    <input class="item-name fakeInput mini-input" readonly id="${item.replace(" ", "").replace(" ", "").replace(" ", "").replace(" ", "").replace(" ", "").replace(" ", "").toUpperCase()}" value="${qty}">
     `;
 			itemsListTotals.appendChild($p);
 		}
@@ -163,48 +162,81 @@ function renderTotal(edited, HighorLow, newEditedNumber) {
 }
 
 function inputChange(itemId) {
-  var itemAmtOrigInput = document.getElementById(`${itemId}Shown`);
+	var itemAmtOrigInput = document.getElementById(`${itemId}Shown`);
 	var itemNewAmt = itemAmtOrigInput.value;
-  editItem(itemId, itemNewAmt)
-  //console.log(itemAmtOrigAmt)
+	editItem(itemId, itemNewAmt)
+	//console.log(itemAmtOrigAmt)
 }
 
 function clearItems() {
-  userAddedItems = []
-  userAddedItemsTotal = []
-  render()
-  renderTotal()
+	userAddedItems = []
+	userAddedItemsTotal = []
+	render()
+	renderTotal()
 }
 
 function deleteItem(itemId) {
-  userAddedItemsTotal = [];
-  userAddedItems.splice(itemId, 1);
-  render();
-  renderTotal();
+	userAddedItemsTotal = [];
+	userAddedItems.splice(itemId, 1);
+	render();
+	renderTotal();
 }
 
-
-
-
-
-
-
-function renderSearchList() {
-  allItemNames.forEach(myFunction); 
-  function myFunction(itemName) {
-    let $item = document.createElement('li');
-		$item.className = 'itemSearchBox';
-		$item.innerHTML = `
-    <div class="itemSearchBoxInside" onclick="addItem('${itemName}',1)">
-    <img loading=lazy src="https://www.arkresourcecalculator.com/assets/images/80px-${items[itemName].imageName}">
-  <p class="item-name mini">${items[itemName].displayName}</p>
-  </div>
-  `;
-		itemSearch.appendChild($item);
-
-}
+function changeTab(tabNumber, tabName) {
+    resourceCard.classList.add("hideOverflow");
+	var i, tabcontent, tablinks;
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	}
+	tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+	document.getElementById(tabName).style.display = "block";
+	document.getElementById(tabNumber).className += " active";
+  setTimeout(() => { resourceCard.classList.remove("hideOverflow"); }, 400);
   
 }
+
+
+function clearinput() {
+	searchInput.value = "";
+}
+const fuse = new Fuse(itemNameList, {
+	keys: ['name'],
+	shouldSort: true,
+	threshold: 0.5
+})
+
+function renderSearchResults() {	var searchResult = searchInput.value;
+	var searchResult = searchInput.value;
+  openAllItems()
+  if(fuse.search(searchResult).length>0){
+    itemSearch.innerHTML = `<div class="full-width searchResultAmount success">${fuse.search(searchResult).length} results</div>`;
+  } else {
+    itemSearch.innerHTML = `<div class="full-width searchResultAmount error">${fuse.search(searchResult).length} results</div>`;
+  }
+  
+  document.getElementById("itemSearch").style.content.visibility = "auto";
+  var results = fuse.search(searchResult);
+  i = 0
+  while(i<results.length && i < maxSearchResults) {
+    //console.log(results[i].item.name)
+    let $p = document.createElement('div');
+			$p.className = "itemSearchResult";
+			$p.innerHTML = `
+      <div onclick="addItem('${results[i].item.name}',1)">
+      <img loading=lazy src="https://www.arkresourcecalculator.com/assets/images/80px-${items[results[i].item.name].imageName}">
+      <p class="item-name mini">${results[i].item.name}</p>
+      </div>
+    `;
+			itemSearch.appendChild($p);
+    i++
+  }
+  //console.log(fuse.search(searchResult).length)
+}
+
 
 function openAllItems() {
   itemSearch.classList.add("openList");
@@ -217,38 +249,11 @@ function closeAllItems() {
   searchInput.classList.remove("no-bottom-border")
 }
 
-
-function searchItems() {
-    var input, filter, ul, li, a, i, p;
-    input = document.getElementById('searchInput');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("itemSearch");
-    li = ul.getElementsByTagName('li');
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("p")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
-
-function changeTab(tabNumber, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  document.getElementById(tabNumber).className += " active";
-}
-changeTab('tab1', 'itemsList');
-
-function clearinput() {
- searchInput.value=""; 
+function getURLParameters() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const itemName = urlParams.get('item');
+  const itemAmount = urlParams.get('amount') || 1;
+  if(!itemName) return
+  addItem(itemName, itemAmount, 0)
+  
 }

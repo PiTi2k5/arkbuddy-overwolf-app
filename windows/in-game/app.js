@@ -14,6 +14,15 @@ function renderHomePage() {
 	appName.innerText = 'Home';
   appSubTitle.innerText = '';
 	appView.innerHTML =  `<div class="app-list basic-card no-padding clear">
+
+  <div class="app-card" onclick="renderResourceCalculatorApp()">
+<div>
+<img class="app-icon" src="https://static.wikia.nocookie.net/arksurvivalevolved_gamepedia/images/b/b9/Smithy.png/revision/latest/scale-to-width-down/128?cb=20150615134739">
+<span class="app-name">Resource Calculator</span>
+</div>
+</div>
+
+
   <div class="app-card animate__fadeInLeft" onclick="renderForgeApp()">
   <div>
   <img class="app-icon" src="https://res.cloudinary.com/tristangregory/image/upload/v1603242081/ark/items80px/80px-Refining_Forge.png">
@@ -70,6 +79,7 @@ function renderHomePage() {
   </div>
   </div>
   
+  
 
 
   
@@ -79,12 +89,6 @@ function renderHomePage() {
 `;
 }
 
-{/* <div class="app-card" onclick="renderResourceCalculatorApp()">
-<div>
-<img class="app-icon" src="https://res.cloudinary.com/tristangregory/image/upload/v1614467631/ark/items/tameRouletteIcon.png">
-<span class="app-name">Resource Calculator</span>
-</div>
-</div> */}
 
 renderHomePage();
 
@@ -122,6 +126,7 @@ function renderSettingsPage() {
 
   <div class="basic-card clear">
   <div class="setting-notice full-tile" id="checkUpdateNotice"></div>
+  <div id="loadingBar"></div>
   <btn onclick="checkForUpdate()" class="settings-button">Check for update</btn>
   <div class="full-tile margin-top">
   <span class="setting-notice lighter mini">arkbuddy version <span class="light" id="appVersionNumber"></span></span>
@@ -214,9 +219,11 @@ function getCurrentVersion() {
 }
 
 function checkForUpdate() {
+  loadingBar.innerHTML = `<div class="lds-ripple"><div></div><div></div></div>`
   overwolf.extensions.checkForExtensionUpdate(CheckForUpdateResult => {
     console.log(CheckForUpdateResult)
     if(CheckForUpdateResult.state=="UpToDate") {
+      loadingBar.innerHTML = ``;
       checkUpdateNotice.innerText = "App is up to date"
     }
     if(CheckForUpdateResult.state=="UpdateAvailable") {
@@ -224,6 +231,7 @@ function checkForUpdate() {
       <span>Update available - Version ${CheckForUpdateResult.updateVersion}</span>
       <btn onclick="updateApp()" class="settings-button">Update</btn>
       `
+      loadingBar.innerHTML = ``;
     }
     if(CheckForUpdateResult.state=="PendingRestart") {
       checkUpdateNotice.innerHTML = `
@@ -231,6 +239,7 @@ function checkForUpdate() {
       <span>Update available - Pending restart</span>
       <btn onclick="relaunchApp()" class="settings-button">Relaunch</btn>
       `
+      loadingBar.innerHTML = ``;
     }
   });
 }
@@ -305,3 +314,19 @@ async function toggleCrosshair() {
   });
 
 }
+
+
+function renderLibraryPage() {
+  appName.innerText = 'Library';
+  appSubTitle.innerText = '';
+  appView.innerHTML = ``;
+  appView.innerHTML = `
+  <div class="basic-card">
+
+
+  </div>
+  `;
+}
+
+
+
