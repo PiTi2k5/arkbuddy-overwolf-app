@@ -11371,17 +11371,19 @@ $__System.register('2', ['1', '6', '7', '8', '9', 'a'], function (_export) {
                     if (window.localStorage.state) {
                         this.state = JSON.parse(localStorage.state);
                     } else {
-                      //Change crosshair settings
+                        var t = localStorage.getItem('crossHairColorHex') || '#ffffff';
+//Change crosshair setings here
+
                         this.state = {
                             centerDot: 0,
-                            crossSize: 70,
+                            crossSize: 50,
                             crossSpread: 0,
                             crossLength: 0,
-                            crossColor: { r: 255, g: 255, b: 255, a: 1 },
-                            dotColor: { r: 255, g: 255, b: 255, a: 0.75 },
-                            currentColor: { r: 0, g: 255, b: 0, a: 1 },
-                            dotDiameter: 10,
-                            strokeWidth: 1,
+                            crossColor: { r: hexToRgb(t).r, g: hexToRgb(t).g, b: hexToRgb(t).b, a: 1 },
+                            dotColor: { r: hexToRgb(t).r, g: hexToRgb(t).g, b: hexToRgb(t).b, a: 1 },
+                            currentColor: { r: 255, g: 255, b: 255, a: 1 },
+                            dotDiameter: 7,
+                            strokeWidth: 2,
                             spinning: false,
                             showMenu: false,
                             showSliders: false,
@@ -11977,3 +11979,18 @@ $__System.register('4', [], false, function() {});
   factory();
 });
 //# sourceMappingURL=cross-bundle.js.map
+
+function hexToRgb(hex) {
+  // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+  var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+    return r + r + g + g + b + b;
+  });
+
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
