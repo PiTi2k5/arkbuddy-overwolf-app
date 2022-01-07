@@ -3,14 +3,14 @@
   "type": "WebApp",
   "meta": {
     "name": "Arkbuddy",
-    "version": "1.3.0",
+    "version": "1.3.5",
     "minimum-overwolf-version": "0.120.0",
     "author": "TristanGames",
     "icon": "img/logo-small.png",
     "icon_gray": "IconMouseNormal.png",
     "launcher_icon": "desktop-icon.ico",
     "window_icon": "img/logo-small.png",
-    "description": "An assortment of easy to use calculators and tools for Ark: Survival  Evolved."
+    "description": "An assortment of easy to use calculators and tools for Ark: Survival Evolved."
   },
   "permissions": [
     "Hotkeys",
@@ -67,8 +67,8 @@
         "popup_blocker": true,
         "mute": true,
         "size": {
-          "width": 1200,
-          "height": 950
+          "width": 1000,
+          "height": 700
         }
       },
       "crosshair": {
