@@ -79,16 +79,23 @@ function renderHomePage() {
   </div>
   </div>
   
+    
+  <div class="app-card full-tile" onclick="openOWStore()">
+  <div>
+  <img class="app-icon" src="https://www.dododex.com/media/logo-small.png">
+  <span class="app-name">Get Dododex</span>
+  </div>
+  </div>
   
 
 
-  
   
   </div>
 
 `;
 }
 
+  // openOWStore(uid)
 
 renderHomePage();
 
@@ -334,3 +341,9 @@ function renderLibraryPage() {
 
 
 
+function openOWStore(uid) {
+  overwolf.utils.openStore({
+    page:overwolf.utils.enums.eStorePage.SubscriptionPage,
+    uid: 'edeigeghmpgekkhffcigabjebiiflpaedmbkahmd'
+  })
+}
