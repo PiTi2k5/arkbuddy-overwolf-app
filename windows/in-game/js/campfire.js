@@ -1,5 +1,5 @@
 function renderCampfireApp() {
-	appName.innerText = 'Campfire Calculator';
+	appName.innerText = ' Campfire Calculator';
 	appView.innerHTML = ``;
 	appView.innerHTML = `
   <div class="basic-card">
