@@ -12,7 +12,7 @@ var favItemsArray = [{
 //localStorage.setItem("userFavorites", JSON.stringify(favItemsArray));
 var maxSearchResults = 50;
 function getData() {
-	fetch('https://assets.codepen.io/189049/arkItemsList.json').then(response => response.json()).then(data => {
+	fetch('https://arkbuddy.app/data/newItemList.json').then(response => response.json()).then(data => {
 		dataString = JSON.stringify(data);
 		itemsJSON = JSON.parse(dataString)
 	}).then((data) => {
@@ -81,7 +81,7 @@ function render(item, qty, edit) {
 		$item.className = 'itemListCard';
 		$item.innerHTML = `
     <div class="itemInfoBox tool-tip">
-    <img onclick="deleteItem(${t})" src="https://www.arkresourcecalculator.com/assets/images/80px-${items[userAddedItems[t].name].imageName}">
+    <img onclick="deleteItem(${t})" src="https://www.arkresourcecalculator.com/assets/images/80px-${items[userAddedItems[t].name].name.replaceAll(" ","_").replaceAll(":","")}.png">
   <input min="1" class="itemAmountInput center-text mini-input" type="number" onchange="inputChange(${t})" id="${t}Shown" value="${userAddedItems[t].qty}">
   <input class="hidden" hidden id="${t}og" value="${userAddedItems[t].qty}">
   <span class="tooltiptext">${items[userAddedItems[t].name].displayName}</span>
@@ -97,7 +97,7 @@ function render(item, qty, edit) {
 			let $p = document.createElement('div');
 			$p.className = 'recipe-item-box tool-tip';
 			$p.innerHTML = `
-          <img src="https://www.arkresourcecalculator.com/assets/images/80px-${items[recipe[i].itemName].imageName}">
+          <img src="https://www.arkresourcecalculator.com/assets/images/80px-${items[recipe[i].itemName].name.replaceAll(" ","_").replaceAll(":","")}.png">
     <input class="item-name fakeInput mini-input" readonly value="${recipe[i].amount * creationAmount}">
     <span class="tooltiptext">${recipe[i].itemName}</span>
     `;
@@ -151,7 +151,7 @@ function renderTotal(edited, HighorLow, newEditedNumber) {
 			$p.className = "item-total tool-tip";
 			$p.id = item;
 			$p.innerHTML = `
-           <img src="https://www.arkresourcecalculator.com/assets/images/80px-${items[item].imageName}">
+           <img src="https://www.arkresourcecalculator.com/assets/images/80px-${items[item].name.replaceAll(" ","_").replaceAll(":","")}.png">
     <span class="tooltiptext">${item}</span>
     <input class="item-name fakeInput mini-input" readonly id="${item.replace(" ", "").replace(" ", "").replace(" ", "").replace(" ", "").replace(" ", "").replace(" ", "").toUpperCase()}" value="${qty}">
     `;
@@ -227,7 +227,7 @@ function renderSearchResults() {	var searchResult = searchInput.value;
 			$p.className = "itemSearchResult";
 			$p.innerHTML = `
       <div onclick="addItem('${results[i].item.name}',1)">
-      <img loading=lazy src="https://www.arkresourcecalculator.com/assets/images/80px-${items[results[i].item.name].imageName}">
+      <img loading=lazy src="https://www.arkresourcecalculator.com/assets/images/80px-${items[results[i].item.name].name.replaceAll(" ","_").replaceAll(":","")}.png">
       <p class="item-name mini">${results[i].item.name}</p>
       </div>
     `;
