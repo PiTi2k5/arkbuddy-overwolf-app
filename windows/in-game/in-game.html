@@ -11,33 +11,28 @@
   </head>
   <body class="in-game">
     <div id="ark-box" class="arkbuddy-app">
+      <div class="hex-pattern"></div>
 
     <!-- -------------------------------- Header ------------------------------- -->
 
     <header class="app-header">
-      <h1><img class="mini-logo" src="../../img/ArkbuddyIcon.svg"></h1>
+      <h1><img class="mini-logo" src="../../img/ArkbuddyIcon.svg"> <span class="title-bar-text"> arkbuddy - <span id="appName"></span></span></h1>
       <div class="window-controls-group">
         <button disabled class="hotkeyPanel window-control hotkey-btn">
-          <span class="inline">Toggle Crosshair</span> <span id="hotkeyCH" class="block highlight">CTRL + Y</span>
+          <span class="inline">Toggle Crosshair</span> <span id="hotkeyCH" class="inline highlight">CTRL + Y</span>
         </button>
 
         <button disabled class="hotkeyPanel window-control hotkey-btn">
-          <span class="inline">Toggle App</span> <span id="hotkey" class="block highlight">CTRL + B</span>
+          <span class="inline">Toggle App</span> <span id="hotkey" class="inline highlight">CTRL + B</span>
         </button>
-        <a class="icon window-control" href="overwolf://settings/hotkeys">
-          <svg>
-            <use xlink:href="/img/header_icons.svg#window-control_settings" />
-          </svg>
-        </a>
+        <button class="icon window-control" onclick="window.location.href='overwolf://settings/hotkeys'">
+          <i class="far fa-cog"></i>
+        </button>
         <button class="icon window-control" id="minimizeButton">
-          <svg>
-            <use xlink:href="../../img/header_icons.svg#window-control_minimize" />
-          </svg>
+          <i class="far fa-window-minimize"></i>
         </button>
         <button class="icon window-control window-control-close" id="closeButton">
-          <svg>
-            <use xlink:href="../../img/header_icons.svg#window-control_close" />
-          </svg>
+          <i class="far fa-times"></i>
         </button>
       </div>
     </header>
@@ -52,7 +47,7 @@
     <div class="nav-btn center-vert-text" onclick="renderHomePage()">
       <div>
         <i class="far fa-home"></i>
-      Home
+      Home 
       </div>
       </div>
 
@@ -92,7 +87,7 @@
     <div class="app-wrapper">
   <div class="calc-details">
   <div class="basic-card clear">
-    <p id="appName"></p>
+    
     <span id="appSubTitle"></span>
     </div>
   </div>
