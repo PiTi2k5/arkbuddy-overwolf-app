@@ -116,11 +116,12 @@ function renderSettingsPage() {
   <input id="babyMatureSpeed" type="number" min="1" onChange="updateSettings()" onKeyUp="updateSettings()">
   </div>
 
-  <div class="input-box three-quarter no-padding hidden">
-  <label>Crosshair</label>
-    <btn onclick="openCrossHair()">Open</btn>
-    <btn onclick="closeCrossHair()">Close</btn>
+  <div class="input-box three-quarter no-padding">
+  <label>Crosshair Color (Requires Restart)</label>
+  <input type="color" id="crossHairColor" value="#ffffff" onChange="updateSettings()" onKeyUp="updateSettings()">
   </div>
+
+  <btn onclick="relaunchApp()" class="settings-button">Restart</btn>
 
   </div>
 
@@ -138,11 +139,13 @@ function renderSettingsPage() {
   fuelConsumpt.value = localStorage.getItem('fuelConsumptionRate') || 1;
   craftSpeed.value = localStorage.getItem('craftingSpeedPercent') || 100;
   babyMatureSpeed.value = localStorage.getItem('babyMatureSpeedRate') || 1;
+  crossHairColor.value = localStorage.getItem('crossHairColorHex') || '#ffffff';
 }
 function updateSettings() {
   localStorage.setItem('fuelConsumptionRate', fuelConsumpt.value)
   localStorage.setItem('craftingSpeedPercent', craftSpeed.value)
   localStorage.setItem('babyMatureSpeedRate', babyMatureSpeed.value)
+  localStorage.setItem('crossHairColorHex', crossHairColor.value)
 }
 
 function renderFeedbackPage() {
@@ -167,7 +170,7 @@ function submitForm() {
   var email = document.getElementById("userEmail").value;
   var textArea = document.getElementById("feedback").value;
 
-  fetch('https://arkbuddy.app/ow/feedbacks', {
+  fetch('https://arkbuddy.app/ow/feedback', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -188,6 +191,7 @@ function submitForm() {
   `;
   return false;
 }
+
 
 
 function convertTime(seconds) {
