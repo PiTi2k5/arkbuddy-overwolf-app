@@ -299,7 +299,7 @@ h3 {
   margin-bottom: 10px;
 }
 .app-name {
-  color: #6b7280;
+  var(--on-surface);
   font-weight: 600;
 }
 
@@ -500,7 +500,7 @@ label {
   font-size: 35px;
   font-weight: 700;
   text-align: center;
-  color: #6b7280;
+  color: var(--on-surface);
   margin-top: 5px !important;
   margin-bottom: 0px !important;
   text-transform: capitalize;
