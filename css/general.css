@@ -959,7 +959,7 @@ option {
   visibility: hidden;
   width: 120px;
   text-align: center;
-  border-radius: var(--mainRadius);
+  border-radius: var(--main-radius);
   padding: 10px;
   font-weight: 600;
   position: absolute;
@@ -970,9 +970,9 @@ option {
   opacity: 0;
   transform: translate(0%, 2.5em);
   transition: all 0.133s ease-in-out;
-  background: #ddf2ff;
-  border: 2px solid #448AFF;
-  color: #448AFF !important;
+  background: var(--secondary-container);
+  border: 2px solid var(--on-secondary-container);
+  color: var(--on-secondary-container) !important;
 }
 
 .tool-tip:hover .tooltiptext {
