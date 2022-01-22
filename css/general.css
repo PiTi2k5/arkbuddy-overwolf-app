@@ -299,7 +299,7 @@ h3 {
   margin-bottom: 10px;
 }
 .app-name {
-  var(--on-surface);
+  color: var(--on-surface);
   font-weight: 600;
 }
 
