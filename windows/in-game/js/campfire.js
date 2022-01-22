@@ -1,5 +1,6 @@
 function renderCampfireApp() {
 	appName.innerText = ' Campfire Calculator';
+  appView.classList.add('pre-animation');
 	appView.innerHTML = ``;
 	appView.innerHTML = `
   <div class="basic-card">
@@ -68,6 +69,9 @@ function renderCampfireApp() {
   </div>
   `;
   campfireData()
+  setTimeout(function(){
+    appView.classList.remove('pre-animation')
+},100)
 }
 
 function campfireData() {
