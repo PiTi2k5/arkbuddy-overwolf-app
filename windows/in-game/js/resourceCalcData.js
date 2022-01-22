@@ -10,7 +10,7 @@ var favItemsArray = [{
 	amt: "1"
 }]
 //localStorage.setItem("userFavorites", JSON.stringify(favItemsArray));
-var maxSearchResults = 50;
+var maxSearchResults = localStorage.getItem("maxSearchResults") || 150;
 function getData() {
 	fetch('https://arkbuddy.app/data/newItemList.json').then(response => response.json()).then(data => {
 		dataString = JSON.stringify(data);
@@ -209,13 +209,15 @@ const fuse = new Fuse(itemNameList, {
 	threshold: 0.5
 })
 
-function renderSearchResults() {	var searchResult = searchInput.value;
+function renderSearchResults() {	
 	var searchResult = searchInput.value;
   openAllItems()
   if(fuse.search(searchResult).length>0){
-    itemSearch.innerHTML = `<div class="full-width searchResultAmount success">${fuse.search(searchResult).length} results</div>`;
+    itemSearch.innerHTML = `<div class="full-width searchResultAmount success sticky">${fuse.search(searchResult).length} results total</div>`;
   } else {
-    itemSearch.innerHTML = `<div class="full-width searchResultAmount error">${fuse.search(searchResult).length} results</div>`;
+    itemSearch.innerHTML = `
+	<img class="margin-center margin-top" src="https://res.cloudinary.com/tristangregory/image/upload/h_125/v1630433401/arkbuddy/arkbuddyConfused.png">
+	<h1>No results found</h1>`;
   }
   
   document.getElementById("itemSearch").style.content.visibility = "auto";
