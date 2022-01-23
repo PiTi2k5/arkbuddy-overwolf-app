@@ -28,7 +28,7 @@ function eGenData() {
   var base = Math.abs(gasAmount * 60)
   var willLast = Math.abs(base) * fuelConsumptionRate;
   
-  var secondsTotal = Math.abs(willLast * 3600);
+  var secondsTotal = Math.abs(willLast * 60);
 
   fuelConsumption.innerText = fuelConsumptionRate;
   time.innerText = convertTime(secondsTotal); 
