@@ -857,8 +857,7 @@ option {
   height: auto;
   overflow-x: hidden;
   overflow-y: scroll;
-  background: var(--light-background);
-  border-radius: var(--mainradius);
+  
   width: 100%;
   box-sizing: content-box;
   margin: auto;
@@ -878,12 +877,12 @@ option {
   contain-intrinsic-size: 170px, 78px;
   transition: 0.333s;
   height: 125px;
-  border: 2px solid transparent;
+  border-radius: var(--main-radius);
 }
 .itemSearchResult:hover {
-  background: #ddf2ff;
-  border-color: #448AFF;
-  color: #448AFF !important;
+  background: var(--primary-container);
+  border-color: var(--on-primary-container);
+  color: var(--on-primary-container) !important;
 }
 .itemSearchResult img {
   height: 50px;
@@ -904,7 +903,6 @@ option {
   display: block !important;
   max-height: 550px !important;
   border-radius: var(--mainRadius);
-  border: 2px solid #e5e7eb;
   border-top: 0;
   margin-bottom: 15px !important;
   padding: 0;
@@ -1037,6 +1035,7 @@ option {
   border-radius: 50px;
   margin: 10px;
   width: 50%;
+  z-index: 0;
   padding-top: 15px;
   padding-bottom: 15px;
   background: transparent;
