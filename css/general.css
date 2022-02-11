@@ -1,3 +1,8 @@
+.in-game {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
 ::selection {
   background: transparent;
   color: var(--mainColorDark);
@@ -62,6 +67,14 @@ h3 {
   color: rgba(0, 0, 0, 0.6);
   font-size: 17px;
 }
+.card-header {
+  /* border-radius: var(--main-radius);
+  background: var(--primary-container); */
+  color: var(--on-primary-container);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
 .arkbuddy-app {
   background: var(--primary-container);
 	color: var(--on-primary-container);
@@ -97,7 +110,7 @@ h3 {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 20px;
 }
 .logo-box {
   width: 100%;
@@ -150,14 +163,13 @@ h3 {
 }
 #app {
   width: 100%;
-  height: 635px;
+  height: max-content;
   /* min-height: 593px; */
   display: inline-block;
   padding: 10px;
-  padding-top: 2px;
+  padding-top: 20px;
   margin-bottom: auto;
   overflow-y: scroll;
-  margin-bottom: 55px;
 }
 #app {
   transition: all 1s;
@@ -166,8 +178,21 @@ h3 {
 #app.pre-animation {
   opacity:0;
 }
+.app-wrapper::-webkit-scrollbar {
+  width: 10px;
+}
+
+.app-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.app-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--on-primary-container);
+  border-radius: var(--main-radius);
+}
+
 #app::-webkit-scrollbar {
-  width: 5px;
+  width: 0px;
 }
 
 #app::-webkit-scrollbar-track {
@@ -175,8 +200,8 @@ h3 {
 }
 
 #app::-webkit-scrollbar-thumb {
-  background-color: var(--mainColor);
-  border-radius: var(--mainRadius);
+  background-color: var(--primary);
+  border-radius: var(--main-radius);
 }
 /* itemSearch */
 
@@ -208,24 +233,33 @@ h3 {
   position: relative;
 }
 .basic-card {
-  
-  border-radius: var(--mainRadius);
-  margin: auto;
-  display: block;
-  width: 97%;
-  padding: 10px;
-  -webkit-box-sizing: border-box;
-  background: var(--surface);
-  color: var(--on-surface);
-	height: auto;
+	background: var(--surface);
+	color: var(--on-surface);
+  height: auto;
 	width: 100%;
 	max-width: 950px;
-	/*   border: 1px solid var(--outline); */
+
 	margin-bottom: 15px;
 	box-shadow: var(--shadow-2);
-
 }
-
+.card-header {
+	width: 100%;
+	color: var(--primary);
+	display: flex;
+}
+.card-title {
+	font-size: 24px;
+	letter-spacing: 0px;
+	font-weight: 600;
+	display: block;
+}
+.card-subtitle {
+	font-size: 16px;
+	letter-spacing: 0.15px;
+	font-weight: 500;
+	display: block;
+	color: var(--outline);
+}
 .calc-details {
   width: 100%;
   height: auto;
@@ -247,10 +281,49 @@ h3 {
   color: #484848;
   letter-spacing: -0.025em;
 }
+.flex-wrap-gap {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 10px;
+	row-gap: 10px;
+}
+.flex-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+.three-thirds {
+	width: 75%;
+}
+.quarter {
+	width: 25%;
+}
+.full-width {
+  width: 100%;
+}
+.half-width {
+  width: 50%;
+}
+.no-padding {
+	padding: none;
+}
+.small-padding {
+	padding: 5px;
+}
+.med-padding {
+	padding: 15px;
+}
+.large-padding {
+	padding: 25px;
+}
+.no-top-padding {
+	padding-top: 0;
+}
+.no-bottom-padding {
+	padding-bottom: 0;
+}
 .clear {
-  background: transparent;
-  border: none;
-  box-shadow: none;
+	background: none;
+	box-shadow: none;
 }
 .no-padding {
   padding: 0;
@@ -808,7 +881,7 @@ option {
   flex-wrap: wrap;
   width: 590px;
   height: 660px;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .mini-logo {
@@ -1137,4 +1210,10 @@ option {
 
 .margin-top {
   margin-top: 10px;
+}
+.border-radius {
+	border-radius: var(--main-radius);
+}
+.border-radius-top {
+	border-radius: var(--main-radius) var(--main-radius) 0 0;
 }
