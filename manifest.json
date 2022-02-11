@@ -20,7 +20,8 @@
     "GameInfo",
     "DesktopStreaming",
     "Tray",
-    "VideoCaptureSettings"
+    "VideoCaptureSettings",
+    "FileSystem"
     ],
   "data": {
     "game_targeting": {
@@ -67,8 +68,8 @@
         "popup_blocker": true,
         "mute": true,
         "size": {
-          "width": 1200,
-          "height": 800
+          "width": 1000,
+          "height": 700
         }
       },
       "crosshair": {
