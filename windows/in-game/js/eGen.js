@@ -3,14 +3,14 @@ function renderEGenApp() {
   appSubTitle.innerText = 'See how long your electric generator will last.';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card ">
+  <div class="basic-card border-radius med-padding ">
   <div class="input-box">
   <label for="gasAmount">Gas Amount</label>
   <input placeholder="0" id="gasAmount" type="number" onKeyUp="eGenData()" onChange="eGenData()">
   </div>
   </div>
   
-  <div id="fuelTable" class="basic-card fuel-card">
+  <div id="fuelTable" class="basic-card border-radius med-padding fuel-card">
   <div class="full-tile">
   <h3><span class="block large-text" id="time"></span>
   <span class="light">Time until empty</span></h3>

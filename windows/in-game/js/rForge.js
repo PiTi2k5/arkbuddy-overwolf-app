@@ -3,7 +3,7 @@ function renderForgeApp() {
   appSubTitle.innerText = `Evenly distribute metal/fuel across all your forges`;
   appView.innerHTML = ` `;
   appView.innerHTML = `
-  <div class="basic-card">
+  <div class="basic-card border-radius med-padding">
   <div class="input-box half">
   <label for="metalAmountRF">Metal Amount</label>
   <input placeholder="0" id="metalAmountRF" type="number" onKeyUp="forgeData()" onChange="forgeData()" onfocusout="oddCheck()">
@@ -15,7 +15,7 @@ function renderForgeApp() {
   </div>
   
   <div id="fuelTable">
-  <div class="basic-card fuel-card">
+  <div class="basic-card border-radius med-padding fuel-card">
   <div class="half-tile">
   <h3><span class="block large-text odometer" id="perForge"></span>
   <span class="light">Metal Per Forge</span></h3>
@@ -26,7 +26,7 @@ function renderForgeApp() {
   </div>
   </div>
   
-  <div class="basic-card no-padding clear">
+  <div class="basic-card border-radius med-padding no-padding clear">
 
   <div class="data-table">
   <div class="data-header">

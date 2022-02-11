@@ -3,7 +3,7 @@ function renderCampfireApp() {
   appView.classList.add('pre-animation');
 	appView.innerHTML = ``;
 	appView.innerHTML = `
-  <div class="basic-card">
+  <div class="basic-card border-radius med-padding">
   <div class="input-box half">
   <label for="meatAmountCF">Meat Amount</label>
   <input placeholder="0" id="meatAmountCF" type="number" onKeyUp="campfireData()" onChange="campfireData()">
@@ -16,7 +16,7 @@ function renderCampfireApp() {
 
   </div>
   
-  <div id="fuelTable" class="basic-card fuel-card">
+  <div id="fuelTable" class="basic-card border-radius med-padding fuel-card">
   
   <div class="half-tile">
   <h3><span class="block large-text" id="meatPer"></span>
@@ -29,7 +29,7 @@ function renderCampfireApp() {
   </div>
 </div>
 
-<div class="basic-card no-padding clear">
+<div class="basic-card border-radius med-padding no-padding clear">
 
 <div class="data-table">
 <div class="data-header">

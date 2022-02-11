@@ -2,7 +2,7 @@ function renderiForgeApp() {
   appName.innerText = 'Industrial Forge Calculator';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card ">
+  <div class="basic-card border-radius med-padding ">
   <div class="input-box half">
   <label for="metalAmountIF">Metal Amount</label>
   <input placeholder="0" id="metalAmountIF" type="number" onKeyUp="iforgeData()" onChange="iforgeData()">
@@ -15,7 +15,7 @@ function renderiForgeApp() {
 
   </div>
   
-  <div id="fuelTable" class="basic-card fuel-card">
+  <div id="fuelTable" class="basic-card border-radius med-padding fuel-card">
   <div class="half-tile">
   <h3><span class="block large-text" id="perForge"></span>
   <span class="light">Metal Per Forge</span></h3>
@@ -27,7 +27,7 @@ function renderiForgeApp() {
   </div>
   </div>
   
-  <div class="basic-card no-padding clear">
+  <div class="basic-card border-radius med-padding no-padding clear">
 
   <div class="data-table">
   <div class="data-header">

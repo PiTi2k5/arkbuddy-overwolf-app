@@ -2,7 +2,7 @@ function renderCustomRecipeApp() {
   appName.innerText = 'Custom Recipe Calculator';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card fuel-card">
+  <div class="basic-card border-radius med-padding fuel-card">
   
   <div class="flex radius margin-bottom full-tile">
   <div class="quarter-tile">

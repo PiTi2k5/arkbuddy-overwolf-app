@@ -2,7 +2,7 @@ function renderTekGenApp() {
   appName.innerText = 'Tek Generator Calculator';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card ">
+  <div class="basic-card border-radius med-padding ">
   <div class="input-box half">
   <label for="elementTG">Element Amount</label>
   <input placeholder="0" id="elementTG" type="number" onKeyUp="tekGenData()" onChange="tekGenData()">
@@ -17,7 +17,7 @@ function renderTekGenApp() {
   </div>
   </div>
   
-  <div id="fuelTable" class="basic-card fuel-card">
+  <div id="fuelTable" class="basic-card border-radius med-padding fuel-card">
 <div class="full-tile">
   <h3><span class="block large-text" id="time"></span>
   <span class="light">Time until empty</span></h3>

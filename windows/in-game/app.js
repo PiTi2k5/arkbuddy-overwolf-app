@@ -107,7 +107,11 @@ function renderSettingsPage() {
   appSubTitle.innerText = 'Change the settings to make the app work with your server.';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card">
+  <div class="basic-card border-radius">
+  <div class="card-header med-padding border-radius-top flex no-bottom-padding">
+  <span class="card-title">Server Settings</span>
+  </div>
+  <div class="card-content med-padding">
   <div class="input-box three-quarter no-padding">
   <label for="fuelConsumpt">Fuel Consumption Rate</label>
   <input id="fuelConsumpt" type="number" min="1" onChange="updateSettings()" onKeyUp="updateSettings()">
@@ -123,6 +127,17 @@ function renderSettingsPage() {
   <input id="babyMatureSpeed" type="number" min="1" onChange="updateSettings()" onKeyUp="updateSettings()">
   </div>
 
+</div>
+
+  </div>
+
+
+  <div class="basic-card border-radius">
+  <div class="card-header med-padding border-radius-top flex no-bottom-padding">
+  <span class="card-title">Crosshair</span>
+  </div>
+
+  <div class="card-content med-padding">
   <div class="input-box three-quarter no-padding">
   <label>Crosshair Color (Requires Restart)</label>
   <input type="color" id="crossHairColor" value="#ffffff" onChange="updateSettings()" onKeyUp="updateSettings()">
@@ -130,9 +145,13 @@ function renderSettingsPage() {
 
   <btn onclick="relaunchApp()" class="settings-button">Restart</btn>
 
+</div>
+
   </div>
 
-  <div class="basic-card clear">
+
+
+  <div class="basic-card border-radius clear">
   <div class="setting-notice full-tile" id="checkUpdateNotice"></div>
   <div id="loadingBar"></div>
   <btn onclick="checkForUpdate()" class="settings-button">Check for update</btn>
@@ -160,7 +179,7 @@ function renderFeedbackPage() {
   appSubTitle.innerText = 'Share your feedback, ideas, suggestions or whatever else!';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card">
+  <div class="basic-card border-radius med-padding">
   <div class="input-box">
   <input placeholder="Your email (Optional)" id="userEmail">
   </div>
@@ -192,7 +211,7 @@ function submitForm() {
     console.log("Fail")
   })
   appView.innerHTML = `
-  <div class="basic-card">
+  <div class="basic-card border-radius med-padding">
   <span class="large-text">Thanks for the feedback!</span>
   </div>
   `;
@@ -305,6 +324,9 @@ function obtainWindow(name) {
  async function openCrossHair() {
   try {
     const windowOpenedResult = await restore('crosshair') 
+    overwolf.windows.setTopmost('crosshair', true, cb=>{
+      console.log(cb)
+    })
 } catch (error) {
     console.log(error) //error
 }
@@ -332,7 +354,7 @@ function renderLibraryPage() {
   appSubTitle.innerText = '';
   appView.innerHTML = ``;
   appView.innerHTML = `
-  <div class="basic-card">
+  <div class="basic-card border-radius med-padding">
 
 
   </div>
