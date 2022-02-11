@@ -25,10 +25,19 @@
   outline: none;
 }
 :root {
+	--main-radius: 15px;
+	--input-radius: 8px;
+	--shadow-color: 220 3% 15%;
+	--shadow-strength: 1%;
+	--shadow-1: 0 1px 2px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
+	--shadow-2: 0 3px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)), 0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%));
+}
+/* 005ac5 006e17 715d00 */
+
+.light {
 	--bodyTextColor: #1f2937;
 	--textColor: #1f2937;
 	--lightText: #6b7280;
-	--mainRadius: 12px;
 	--primary: #005ac5;
 	--on-primary: #ffffff;
 	--primary-container: #d7e2ff;
@@ -54,12 +63,33 @@
 	--outline: #75777f;
 	--inverse-on-surface: #f2f0f4;
 	--inverse-surface: #303033;
-  --main-radius: 15px;
-  --input-radius: 8px;
-  --shadow-color: 220 3% 15%;
-  --shadow-strength: 1%;
-  --shadow-1: 0 1px 2px -1px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
-  --shadow-2: 0 3px 5px -2px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 3%)), 0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%));
+}
+.dark {
+	--primary: #acc6ff;
+	--on-primary: #002d6d;
+	--primary-container: #004299;
+	--on-primary-container: #d7e2ff;
+	--secondary: #78dc77;
+	--on-secondary: #003907;
+	--secondary-container: #00530f;
+	--on-secondary-container: #93f990;
+	--tertiary: #e8c41d;
+	--on-tertiary: #3b2f00;
+	--tertiary-container: #554500;
+	--on-tertiary-container: #ffe15f;
+	--error: #ffb4a9;
+	--error-container: #930006;
+	--on-error: #680003;
+	--on-error-container: #ffdad4;
+	--background: #1b1b1e;
+	--on-background: #e4e2e6;
+	--surface: #1b1b1e;
+	--on-surface: #e4e2e6;
+	--surface-variant: #44464e;
+	--on-surface-variant: #c5c6d0;
+	--outline: #8e9099;
+	--inverse-on-surface: #1b1b1e;
+	--inverse-surface: #e4e2e6;
 }
 h3 {
   margin: 5px;
@@ -96,7 +126,7 @@ h3 {
   width: auto;
   height: auto;
   position: relative;
-  border-radius: var(--mainRadius);
+  border-radius: var(--main-radius);
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   box-shadow: 0 7px 14px rgb(50 50 93 / 10%), 0 3px 6px rgb(0 0 0 / 8%);
@@ -349,7 +379,7 @@ h3 {
   color: var(--on-surface);
   box-shadow: var(--shadow-2);
   padding: 15px;
-  border-radius: var(--mainRadius);
+  border-radius: var(--main-radius);
   transition: 0.333s;
   display: flex;
   justify-content: center;
@@ -552,7 +582,7 @@ label {
   padding: 5px;
 }
 .radius {
-  border-radius: var(--mainRadius);
+  border-radius: var(--main-radius);
 }
 .margin-bottom {
   margin-bottom: 10px;
@@ -669,7 +699,7 @@ label {
 .side-bar-tile {
   margin-left: auto;
   margin-right: auto;
-  border-radius: var(--mainRadius);
+  border-radius: var(--main-radius);
   text-align: center;
   flex-direction: column;
   color: rgba(47, 102, 154, 0.5);
@@ -765,7 +795,7 @@ option {
 .data-table {
   background: #fff;
   /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
-  border-radius: var(--mainRadius);
+  border-radius: var(--main-radius);
   
   margin: auto;
   display: block;
@@ -939,7 +969,7 @@ option {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border-radius: 0 0 var(--mainradius) var(--mainradius);
+  border-radius: 0 0 var(--main-radius) var(--main-radius);
   display: none;
 }
 .itemSearchResult {
@@ -976,7 +1006,7 @@ option {
 .openList {
   display: block !important;
   max-height: 550px !important;
-  border-radius: var(--mainRadius);
+  border-radius: var(--main-radius);
   border-top: 0;
   margin-bottom: 15px !important;
   padding: 0;
