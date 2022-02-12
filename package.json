@@ -1,0 +1,22 @@
+{
+  "name": "arkbuddy-overwolf-app",
+  "version": "1.0.0",
+  "description": "arkbuddy overwolf app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tristangre97/arkbuddy-overwolf-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tristangre97/arkbuddy-overwolf-app/issues"
+  },
+  "homepage": "https://github.com/tristangre97/arkbuddy-overwolf-app#readme",
+  "dependencies": {
+    "adm-zip": "^0.5.9"
+  }
+}
