@@ -121,7 +121,7 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   border: 0px solid #000;
-  border-radius: 12px;
+  /* border-radius: 12px; */
 }
 .timer-app {
   background: var(--bodyColor);
@@ -212,19 +212,7 @@ h3 {
 #app.pre-animation {
   opacity: 0;
 }
-.app-wrapper::-webkit-scrollbar {
-  width: 5px;
-}
 
-.app-wrapper::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.app-wrapper::-webkit-scrollbar-thumb {
-  background-color: var(--on-primary-container);
-  border-radius: var(--main-radius);
-  opacity: 0.5;
-}
 
 #app::-webkit-scrollbar {
   width: 0px;
@@ -914,9 +902,26 @@ option {
 .app-wrapper {
   display: flex;
   flex-wrap: wrap;
-  overflow-y: overlay;
+  overflow-y: auto;
+  height: 93.5%;
+
+}
+.app-wrapper::-webkit-scrollbar {
+  width: 7.5px;
 }
 
+.app-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.app-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--on-primary-container);
+  border-radius: var(--main-radius);
+  opacity: 0.5;
+}
+.app-wrapper::-webkit-scrollbar-button {
+  background-color: transparent;
+}
 .mini-logo {
   height: 30px;
   display: inline-block;
@@ -1255,3 +1260,4 @@ option {
   height: 100%;
   display: flex;
 }
+
